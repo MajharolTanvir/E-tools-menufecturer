@@ -1,10 +1,34 @@
 import React from 'react';
 import { useForm } from "react-hook-form";
+import auth from '../../firebase.init'
+import { useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
+import Loading from '../../Shared/Loading';
+import { toast } from 'react-toastify';
 
 const Login = () => {
     const { register, formState: { errors }, handleSubmit } = useForm();
+    const [
+        signInWithEmailAndPassword,
+        user,
+        loading,
+        error,
+    ] = useSignInWithEmailAndPassword(auth);
 
-    const onSubmit = data => console.log(data);
+    const onSubmit = data => {
+        const email = data.Email
+        const password = data.Password
+        signInWithEmailAndPassword(email, password)
+    }
+
+    if (user) {
+
+    }
+    if (loading) {
+        return <Loading></Loading>
+    }
+    if (error) {
+        toast(error.message)
+    }
     return (
         <div className="card w-96 bg-neutral text-white shadow-xl">
             <div className="card-body">
