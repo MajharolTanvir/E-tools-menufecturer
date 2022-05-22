@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 const Footer = () => {
+    const getYear = () => new Date().getFullYear();
     return (
         <footer>
             <div className="footer justify-items-center p-10 bg-neutral text-neutral-content">
@@ -29,7 +30,7 @@ const Footer = () => {
                 </div>
             </div>
             <div className="footer footer-center p-4 bg-base-300 text-base-content">
-                <p>Copyright &copy; 2022 - All right reserved by E-Tools Manufacturer.</p>
+                <p>Copyright &copy; {getYear()} - All right reserved by E-Tools Manufacturer.</p>
             </div>
         </footer>
     );

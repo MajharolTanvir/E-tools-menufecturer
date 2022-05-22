@@ -4,6 +4,8 @@ import auth from '../../firebase.init'
 import { useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
 import Loading from '../../Shared/Loading';
 import { toast } from 'react-toastify';
+import SocialLogin from './SocialLogin';
+import { Link } from 'react-router-dom';
 
 const Login = () => {
     const { register, formState: { errors }, handleSubmit } = useForm();
@@ -30,9 +32,10 @@ const Login = () => {
         toast(error.message)
     }
     return (
-        <div className="card w-96 bg-neutral text-white shadow-xl">
+        <div className="card w-full sm:w-96 bg-gradient-to-r from-cyan-500 to-blue-500 text-white shadow-xl">
             <div className="card-body">
                 <h2 className="card-title justify-center">Login</h2>
+                <div className="flex flex-col w-full border-opacity-50">
                 <form onSubmit={handleSubmit(onSubmit)}>
                     <div className="form-control w-full text-black max-w-xs">
                         <label className="label">
@@ -71,12 +74,16 @@ const Login = () => {
                             {errors.Password?.type === 'required' && <p className='text-red-400'>{errors.Password.message}</p>}
                             {errors.Password?.type === 'minLength' && <p className='text-red-400'>{errors.Password.message}</p>}
                         </label>
-                    </div>
-                    <input className='border-2 w-full border-slate-500 px-3 btn btn-primary' type="submit" />
+                        </div>
+                        <p className='mb-1'>Forget password?<Link to='/forgetPass' className='text-slate-800 py-5 pl-1'>Click here</Link></p>
+                        <input className="btn hover:border-0 hover:shadow-xl bg-transparent hover:bg-gradient-to-r from-indigo-500 to-sky-500 text-slate-100 hover:text-slate-900 my-3 w-full hover:font-bold" type="submit" />
+
                 </form>
+                    <div className="divider">OR</div>
+                    <SocialLogin />
+                </div>
             </div>
         </div>
-
     );
 };
 
