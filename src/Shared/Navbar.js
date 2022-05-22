@@ -4,7 +4,7 @@ import logo from '../image/logo.png'
 
 const Navbar = () => {
     return (
-        <nav className="sticky top-0">
+        <nav className="sticky top-0 z-10">
             <div className="navbar bg-accent">
                 <div className="navbar-start">
                     <div className="dropdown">
