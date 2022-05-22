@@ -2,17 +2,14 @@ module.exports = {
   content: [
     "./src/**/*.{js,jsx,ts,tsx}",
   ],
-  theme: {
-    extend: {},
-  },
-  daisyUi: {
+  daisyui: {
     themes: [
       {
         myTheme: {
-          primary: "#6419E6",
-          secondary: "#1FB2A6",
+          primary: "#a991f7",
+          secondary: "#FBBD23",
           accent: "#3ABFF8",
-          neutral: "#191D24",
+          neutral: "#2A303C",
           "base-100": "#ffffff",
         },
       },
