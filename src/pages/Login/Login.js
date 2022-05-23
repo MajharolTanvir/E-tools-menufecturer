@@ -1,20 +1,26 @@
 import React from 'react';
 import { useForm } from "react-hook-form";
 import auth from '../../firebase.init'
-import { useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
+import { useAuthState, useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
 import Loading from '../../Shared/Loading';
 import { toast } from 'react-toastify';
 import SocialLogin from './SocialLogin';
-import { Link } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 
 const Login = () => {
+    const [user, loading] = useAuthState(auth)
     const { register, formState: { errors }, handleSubmit } = useForm();
+
     const [
         signInWithEmailAndPassword,
-        user,
-        loading,
+        signInUser,
+        signInLoading,
         error,
     ] = useSignInWithEmailAndPassword(auth);
+
+    const navigate = useNavigate()
+    const location = useLocation()
+    const from = location.state?.from?.pathname || "/";
 
     const onSubmit = data => {
         const email = data.Email
@@ -22,17 +28,17 @@ const Login = () => {
         signInWithEmailAndPassword(email, password)
     }
 
-    if (user) {
-
-    }
-    if (loading) {
+    if (loading || signInLoading) {
         return <Loading></Loading>
+    }
+    if (user || signInUser) {
+        navigate(from, { replace: true });
     }
     if (error) {
         toast(error.message)
     }
     return (
-        <div className="card w-full sm:w-96 bg-gradient-to-r from-cyan-500 to-blue-500 text-white shadow-xl">
+        <div className="card w-full sm:w-96 bg-gradient-to-r from-sky-600 to-indigo-500 text-gray-200  shadow-xl shadow-secondary">
             <div className="card-body">
                 <h2 className="card-title justify-center">Login</h2>
                 <div className="flex flex-col w-full border-opacity-50">

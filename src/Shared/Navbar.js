@@ -4,12 +4,16 @@ import { useAuthState } from 'react-firebase-hooks/auth';
 import { Link } from 'react-router-dom';
 import auth from '../firebase.init';
 import logo from '../image/logo.png'
+import Loading from '../Shared/Loading'
 
 const Navbar = () => {
-    const [user] = useAuthState(auth)
+    const [user, loading] = useAuthState(auth)
 
     const handleLogOut = () => {
         signOut(auth)
+    }
+    if (loading) {
+        return <Loading />
     }
     return (
         <nav className="sticky top-0 z-10">
@@ -21,6 +25,9 @@ const Navbar = () => {
                         </label>
                         <ul tabIndex="0" className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52">
                             <li><Link to='/'>Home</Link></li>
+                            {
+                                user ? <li><Link to='/dashboard'>Dashboard</Link></li> : ''
+                            }
                             {user ? <button onClick={handleLogOut}>Log out</button> : <li><Link to='/login'>Login</Link></li>}
                         </ul>
                     </div>
@@ -31,6 +38,9 @@ const Navbar = () => {
                 <div className="navbar-center hidden lg:flex">
                     <ul className="menu menu-horizontal p-0">
                         <li><Link to='/'>Home</Link></li>
+                        {
+                            user ? <li><Link to='/dashboard'>Dashboard</Link></li> : ''
+                        }
                         {user ? <button onClick={handleLogOut}>Log out</button> : <li><Link to='/login'>Login</Link></li>}
                     </ul>
                 </div>
@@ -38,11 +48,13 @@ const Navbar = () => {
                     <div className="dropdown dropdown-end flex justify-end">
                         <label tabIndex="0" className="btn btn-ghost btn-circle avatar">
                             <div className="w-10 rounded-full">
-                                <img src="https://api.lorem.space/image/face?hash=33791" alt='' />
+                                <img src={user?.photoURL} alt='' />
                             </div>
                         </label>
                         <ul tabIndex="0" className="mt-3 p-2 shadow menu menu-compact dropdown-content bg-base-100 rounded-box w-52">
                             <li>
+                                <p>{user?.displayName}</p>
+                                <p>{user?.email}</p>
                                 <Link to='/' className="justify-between">
                                     Profile
                                     <span className="badge">New</span>

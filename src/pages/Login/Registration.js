@@ -1,6 +1,7 @@
 import React from 'react';
 import { useCreateUserWithEmailAndPassword, useSendEmailVerification } from 'react-firebase-hooks/auth';
 import { useForm } from 'react-hook-form';
+import { useLocation, useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import auth from '../../firebase.init';
 import Loading from '../../Shared/Loading';
@@ -16,6 +17,10 @@ const Registration = () => {
         error,
     ] = useCreateUserWithEmailAndPassword(auth);
     const [sendEmailVerification, sending, SendingError] = useSendEmailVerification(auth);
+
+    const navigate = useNavigate()
+    const location = useLocation()
+    const from = location.state?.from?.pathname || "/";
 
     const onSubmit = data => {
         const image = data.Image[0]
@@ -39,16 +44,17 @@ const Registration = () => {
         sendEmailVerification()
         toast('Verification email send successful')
     }
-    if (user) {
-    }
     if (loading || sending) {
         return <Loading></Loading>
+    }
+    if (user) {
+        navigate(from, { replace: true });
     }
     if (error || SendingError) {
         toast(error?.message || SendingError?.message)
     }
     return (
-        <div className="card w-full sm:w-96 bg-gradient-to-r from-blue-500 to-cyan-500 text-white shadow-xl">
+        <div className="card w-full sm:w-96 bg-gradient-to-r from-sky-600 to-indigo-500 text-gray-200  shadow-xl shadow-secondary">
             <div className="card-body">
                 <h2 className="card-title justify-center">Registration</h2>
                 <form onSubmit={handleSubmit(onSubmit)}>

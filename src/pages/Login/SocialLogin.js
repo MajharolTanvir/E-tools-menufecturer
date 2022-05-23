@@ -4,15 +4,22 @@ import { toast } from 'react-toastify';
 import auth from '../../firebase.init'
 import Loading from '../../Shared/Loading'
 import { BsGithub, BsGoogle } from "react-icons/bs";
+import { useLocation, useNavigate } from 'react-router-dom';
 
 const SocialLogin = () => {
     const [signInWithGoogle, googleUser, googleLoading, googleError] = useSignInWithGoogle(auth);
     const [signInWithGithub, githubUser, githubLoading, githubError] = useSignInWithGithub(auth);
 
-    if (googleUser || githubUser) {
-    }
+    const navigate = useNavigate()
+    const location = useLocation()
+    const from = location.state?.from?.pathname || "/";
+
+
     if (googleLoading || githubLoading) {
         return <Loading></Loading>
+    }
+    if (googleUser || githubUser) {
+        navigate(from, { replace: true });
     }
     if (googleError || githubError) {
         toast(googleError?.message || githubError?.message)
