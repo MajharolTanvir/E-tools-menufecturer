@@ -18,17 +18,17 @@ const BusinessSummery = () => {
                     </div>
                     <div className='text-center'>
                         <MdOutlineLocalShipping className='mx-auto text-secondary text-4xl mb-3' />
-                        <h4 className='font-bold text-2xl text-slate-100'>500000+</h4>
+                        <h4 className='font-bold text-2xl text-slate-100'>50K+</h4>
                         <p className='text-secondary'>Complete delivery</p>
                     </div>
                     <div className='text-center'>
                         <FaUsers className='mx-auto text-secondary text-4xl mb-3' />
-                        <h4 className='font-bold text-2xl text-slate-100'>3000+</h4>
+                        <h4 className='font-bold text-2xl text-slate-100'>3k+</h4>
                         <p className='text-secondary'>Happy clients</p>
                     </div>
                     <div className='text-center'>
                         <VscFeedback className='mx-auto text-secondary text-4xl mb-3' />
-                        <h4 className='font-bold text-2xl text-slate-100'>1800+</h4>
+                        <h4 className='font-bold text-2xl text-slate-100'>2k+</h4>
                         <p className='text-secondary'>Feedbacks</p>
                     </div>
                 </div>
