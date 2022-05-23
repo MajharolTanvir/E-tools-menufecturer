@@ -118,7 +118,7 @@ const Registration = () => {
                             {errors.Password?.type === 'minLength' && <p className='text-red-400'>{errors.Password.message}</p>}
                         </label>
                     </div>
-                    <input className="btn hover:border-0 hover:shadow-xl bg-transparent hover:bg-gradient-to-r from-indigo-500 to-sky-500 text-slate-100 hover:text-slate-900 my-3 w-full hover:font-bold" type="submit" />
+                    <input className="btn hover:border-0 hover:shadow-xl bg-slate-800 hover:bg-gradient-to-r from-indigo-900 via-indigo-400 to-indigo-900 text-slate-100 hover:text-slate-900 my-3 w-full hover:font-bold" type="submit" />
                 </form>
             </div>
         </div>
