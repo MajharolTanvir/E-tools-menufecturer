@@ -2,48 +2,48 @@
     {
         "name": "Ball pen hammer",
         "image": "https://i.ibb.co/rwTt3XR/bell-peen-hammer.jpg",
-        "price": "$14",
-        "available": "2,590",
+        "price": 14,
+        "available": 2590,
         "minQuantity": 400,
         "about": "A ball-peen or ball pein hammer, also known as a machinist's hammer,[1] is a type of peening hammer used in metalworking. It has two heads, one flat and the other, called the peen, rounded.\r\n"
     },
     {
         "name": "Claw hammer",
         "image": "https://i.ibb.co/FgWYPCv/claw-peen-hammer.jpg",
-        "price": "$55",
-        "available": "2,270",
+        "price": 55,
+        "available": 2270,
         "minQuantity": 400,
         "about": "A claw hammer is a hammer primarily used in carpentry for driving nails into or pulling them from wood. Historically, a claw hammer has been associated with woodworking, but is also used in general applications.\r\n"
     },
     {
         "name": "Cross peen hammer",
         "image": "https://i.ibb.co/hH8ZfZz/cross-pein-hammer.jpg",
-        "price": "$43",
-        "available": "2,684",
+        "price": 43,
+        "available": 2684,
         "minQuantity": 400,
         "about": "A Warrington hammer is a type of cross-peen hammer commonly used in woodworking. Other names for the Warrington hammer include joiners' hammer, English pattern hammer, and Warrington pattern hammer.\r\n"
     },
     {
         "name": "Sledge hammer",
         "image": "https://i.ibb.co/QvPbGB0/sledge-hammer.jpg",
-        "price": "$27",
-        "available": "2,572",
+        "price": 27,
+        "available": 2572,
         "minQuantity": 400,
         "about": "A sledgehammer is a tool with a large, flat, often metal head, attached to a long handle. The long handle combined with a heavy head allows the sledgehammer to gather momentum during a swing and apply a large force compared to hammers designed to drive nails.\r\n"
     },
     {
         "name": "Bush hammer",
         "image": "https://i.ibb.co/Ky470CG/string-peen-hammer.jpg",
-        "price": "$35",
-        "available": "2,473",
+        "price": 35,
+        "available": 2473,
         "minQuantity": 400,
         "about": "A bush hammer, also known as an axe hammer, is a masonry tool used to texturize stone and concrete. The term is derived from the German word bosshammer, where Old German bossen meant to beat.\r\n"
     },
     {
         "name": "Tack hammer",
         "image": "https://i.ibb.co/ZTsx1k4/tack-hammer.jpg",
-        "price": "$22",
-        "available": "2,582",
+        "price": 22,
+        "available": 2582,
         "minQuantity": 400,
         "about": "An upholstery hammer (also called a tack hammer) is a lightweight hammer used for securing upholstery fabric to furniture frames using tacks or small nails.Many styles have two faces, one face usually being magnetized to aid in placement of tacks (this face has a split surface to make its magnetic hold stronger).\r\n"
     }

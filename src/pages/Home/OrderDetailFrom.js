@@ -1,6 +1,7 @@
 import React from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { useForm } from 'react-hook-form';
+import { toast } from 'react-toastify';
 import auth from '../../firebase.init';
 
 const OrderDetailFrom = ({ tool }) => {
@@ -8,6 +9,16 @@ const OrderDetailFrom = ({ tool }) => {
     const { register, formState: { errors }, handleSubmit } = useForm();
 
     const onSubmit = data => {
+        if (parseInt(data.Quantity) > parseInt(tool.available)) {
+            console.log(parseInt(tool.available), parseInt(data.Quantity));
+            toast(`Can not select more then ${tool.available}`)
+            return
+        }
+        if (parseInt(data.Quantity) < tool.minQuantity) {
+            console.log(tool.minQuantity, parseInt(data.Quantity));
+            toast(`Can not select less then ${tool.minQuantity}`)
+            return
+        }
         console.log(data);
     }
 
@@ -33,10 +44,6 @@ const OrderDetailFrom = ({ tool }) => {
                         <input readOnly value={user.email} className='border-2 border-slate-500 px-1 py-2 rounded-lg' {...register("Email", {
                             required: true
                         })} />
-                        <label className="label">
-                            {errors.Email?.type === 'required' && <p className='text-red-400'>{errors.Email.message}</p>}
-                            {errors.Email?.type === 'pattern' && <p className='text-red-400'>{errors.Email.message}</p>}
-                        </label>
                     </div>
 
                     <div className="form-control w-full text-black max-w-xs">
@@ -73,21 +80,18 @@ const OrderDetailFrom = ({ tool }) => {
                             {errors.Number?.type === 'minLength' && <p className='text-red-400'>{errors.Number.message}</p>}
                         </label>
                     </div>
-                    <div className="form-control text-black w-full max-w-xs">
+                    <div className="form-control w-full text-black max-w-xs">
                         <label className="label">
-                            <span className="label-text text-white">Order quantity</span>
+                            <span className="label-text text-white">Product quantity</span>
                         </label>
-                        <input type='number'  className='border-2 border-slate-500 px-1 py-2 rounded-lg' {...register("Quantity", {
+                        <input type='number' className='border-2 border-slate-500 px-1 py-2 text-black rounded-lg' {...register("Quantity", {
                             required: {
                                 value: true,
-                                message: 'Enter your needed quantity',
+                                message: 'Provide a valid Quantity'
                             },
-                            
                         })} />
                         <label className="label">
-                            {errors.Quantity?.type === 'required' && <p className='text-red-400'>{errors.Number.message}</p>}
-                            {errors.Quantity?.type === 'max' && <p className='text-red-400'>{errors.Number.message}</p>}
-                            {errors.Quantity?.type === 'min' && <p className='text-red-400'>{errors.Number.message}</p>}
+                            {errors.Quantity?.type === 'required' && <p className='text-red-400'>{errors.Quantity.message}</p>}
                         </label>
                     </div>
                     <input className="btn hover:border-0 hover:shadow-xl bg-slate-800 hover:bg-gradient-to-r from-indigo-900 via-indigo-400 to-indigo-900 text-slate-100 hover:text-slate-900 my-3 w-full hover:font-bold" type="submit" />

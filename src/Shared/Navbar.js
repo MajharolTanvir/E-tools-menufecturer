@@ -5,6 +5,7 @@ import { Link } from 'react-router-dom';
 import auth from '../firebase.init';
 import logo from '../image/logo.png'
 import Loading from '../Shared/Loading'
+import { BiMenu } from "react-icons/bi";
 
 const Navbar = () => {
     const [user, loading] = useAuthState(auth)
@@ -62,6 +63,7 @@ const Navbar = () => {
                             </li>
                         </ul>
                     </div>
+                    <label tabIndex="0" htmlFor="my-drawer-2" className="btn btn-primary drawer-button lg:hidden"><BiMenu /></label>
                 </div>
             </div>
         </nav>

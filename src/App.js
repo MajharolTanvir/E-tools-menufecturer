@@ -22,9 +22,9 @@ function App() {
         <Route path='/' element={<Home></Home>}></Route>
         <Route path='/tool/:id' element={<PrivateRouter><ToolDetails /></PrivateRouter>}></Route>
         <Route path='/dashboard' element={<PrivateRouter><Dashboard /></PrivateRouter>}>
-          <Route path='/myProfile' element={<MyProfile />}></Route>
-          <Route path='/myOrder' element={<MyOrders />}></Route>
-          <Route path='/addReview' element={<AddReview />}></Route>
+          <Route path='myProfile' element={<MyProfile />}></Route>
+          <Route path='myOrder' element={<MyOrders />}></Route>
+          <Route path='addReview' element={<AddReview />}></Route>
         </Route>
         <Route path='/login' element={<Authentication></Authentication>}></Route>
         <Route path='/forgetPass' element={<ForgetPass></ForgetPass>}></Route>
