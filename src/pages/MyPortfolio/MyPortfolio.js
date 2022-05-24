@@ -1,5 +1,4 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import image from '../../image/DSC_3583.JPG'
 
 const MyPortfolio = () => {
@@ -7,11 +6,13 @@ const MyPortfolio = () => {
         <div className='grid grid-cols-1 md:grid-cols-2 text-white m-10 items-center md:m-20'>
             <div className=''>
                 <img className='w-full md:w-96 border-8 border-slate-300 rounded-2xl shadow-lg shadow-slate-300' src={image} alt="" />
+                <div className='pt-10'>
+                    <p><span className='font-bold text-lg'>Name:</span> Majharul Tanvir</p>
+                    <p><span className='font-bold text-lg'>Email:</span> mdtanvir6070@gmail.com</p>
+                </div>
             </div>
             <div className='my-10'>
                 <div>
-                    <p><span className='font-bold'>Name:</span> Majharul Tanvir</p>
-                    <p><span className='font-bold'>Email:</span> mdtanvir6070@gmail.com</p>
                 </div>
                 <div>
                     <h6 className='font-bold text-center my-5'>Education:</h6>
