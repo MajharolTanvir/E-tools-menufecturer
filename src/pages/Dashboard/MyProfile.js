@@ -8,7 +8,7 @@ const MyProfile = () => {
     const [person, setPerson] = useState({})
     const [user] = useAuthState(auth)
     const { displayName, email, photoURL } = user
-    const { register, formState: { errors }, handleSubmit } = useForm();
+    const { register, handleSubmit } = useForm();
 
     useEffect(() => {
         fetch(`http://localhost:5000/user/${email}`)
