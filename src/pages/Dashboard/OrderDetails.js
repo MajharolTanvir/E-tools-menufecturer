@@ -1,6 +1,6 @@
 import React from 'react';
 
-const OrderDetails = ({ order, setCancel, i }) => {
+const OrderDetails = ({ order, setCancel, i}) => {
     return (
         <tr key={order._id}>
             <th>{i + 1}</th>

@@ -1,7 +1,7 @@
 import React from 'react';
 import { toast } from 'react-toastify';
 
-const CancelOrder = ({ cancel }) => {
+const CancelOrder = ({ cancel, refetch, setCancel }) => {
 
     const handleDeleteOrder = id => {
         fetch(`http://localhost:5000/order/${id}`, {
@@ -10,6 +10,9 @@ const CancelOrder = ({ cancel }) => {
             .then(res => res.json())
             .then(data => {
                 toast.success('Your order canceled')
+                refetch()
+                setCancel(null)
+
             })
     }
     return (

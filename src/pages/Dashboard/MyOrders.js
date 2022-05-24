@@ -10,7 +10,7 @@ const MyOrders = () => {
     const [user] = useAuthState(auth)
     const [cancel, setCancel] = useState(null)
     const { email } = user
-    const { data: orders, isLoading } = useQuery(['orders', email], () => fetch(`http://localhost:5000/order/${email}`).then(res => res.json()))
+    const { data: orders, isLoading, refetch } = useQuery(['orders', email], () => fetch(`http://localhost:5000/order/${email}`).then(res => res.json()))
 
 
 
@@ -57,6 +57,8 @@ const MyOrders = () => {
             </table>
             {cancel && <CancelOrder
                 cancel={cancel}
+                refetch={refetch}
+                setCancel={setCancel}
             ></CancelOrder>}
         </div>
     );
