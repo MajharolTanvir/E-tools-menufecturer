@@ -14,6 +14,7 @@ import MyProfile from './pages/Dashboard/MyProfile';
 import MyOrders from './pages/Dashboard/MyOrders';
 import AddReview from './pages/Dashboard/AddReview';
 import NotFound from './Shared/NotFound';
+import MyPortfolio from './pages/MyPortfolio/MyPortfolio';
 
 function App() {
   return (
@@ -27,6 +28,8 @@ function App() {
           <Route path='myOrder' element={<MyOrders />}></Route>
           <Route path='addReview' element={<AddReview />}></Route>
         </Route>
+        <Route path='/portfolio' element={<MyPortfolio></MyPortfolio>}></Route>
+        <Route path='/login' element={<Authentication></Authentication>}></Route>
         <Route path='/login' element={<Authentication></Authentication>}></Route>
         <Route path='/forgetPass' element={<ForgetPass></ForgetPass>}></Route>
         <Route path='*' element={<NotFound></NotFound>}></Route>

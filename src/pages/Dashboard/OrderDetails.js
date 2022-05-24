@@ -9,7 +9,7 @@ const OrderDetails = ({ order, setCancel, i}) => {
             <td className='flex justify-center'><img className='w-10' src={order?.productImg} alt="" /></td>
             <td>{order?.quantity}</td>
             <td>{order?.price}</td>
-            <td><button className='btn btn-info btn-xs'>Delete</button></td>
+            <td><button className='btn btn-info btn-xs'>Pay</button></td>
             <td><label htmlFor="cancel" onClick={() => setCancel(order)} className="btn btn-xs modal-button">Cancel</label></td>
         </tr>
     );
