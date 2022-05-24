@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { useForm } from 'react-hook-form';
 import { toast } from 'react-toastify';
@@ -6,7 +6,10 @@ import auth from '../../firebase.init';
 
 const OrderDetailFrom = ({ tool }) => {
     const [user] = useAuthState(auth)
+    const [quantity, setQuantity] = useState(0)
     const { register, formState: { errors }, handleSubmit } = useForm();
+
+    const updatePrice = tool.price * parseInt(quantity)
 
     const onSubmit = data => {
         if (parseInt(data.Quantity) > parseInt(tool.available)) {
@@ -20,6 +23,30 @@ const OrderDetailFrom = ({ tool }) => {
             return
         }
         console.log(data);
+
+        const order = {
+            name: data.Name,
+            email: data.Email,
+            address: data.Address,
+            phone: data.Number,
+            quantity: data.Quantity,
+            productImg: tool.image,
+            productName: tool.name,
+            price: updatePrice,
+        }
+        fetch('http://localhost:5000/orders', {
+            method: "POST",
+            headers: {
+                'content-type': 'application/json',
+            },
+            body: JSON.stringify(order)
+        })
+            .then(res => res.json())
+            .then(result => {
+                if (result.insertedId > 0) {
+                    toast('Your order added successFully')
+                }
+            })
     }
 
 
@@ -85,6 +112,7 @@ const OrderDetailFrom = ({ tool }) => {
                             <span className="label-text text-white">Product quantity</span>
                         </label>
                         <input type='number' className='border-2 border-slate-500 px-1 py-2 text-black rounded-lg' {...register("Quantity", {
+                            onChange: (e) => setQuantity(e.target.value),
                             required: {
                                 value: true,
                                 message: 'Provide a valid Quantity'
@@ -93,6 +121,12 @@ const OrderDetailFrom = ({ tool }) => {
                         <label className="label">
                             {errors.Quantity?.type === 'required' && <p className='text-red-400'>{errors.Quantity.message}</p>}
                         </label>
+                    </div>
+                    <div className="form-control w-full text-black max-w-xs">
+                        <label className="label">
+                            <span className="label-text text-white">Total price</span>
+                        </label>
+                        <input type='number' readOnly value={updatePrice} className='border-2 border-slate-500 px-1 py-2 text-black rounded-lg' {...register("Price", { required: true })} />
                     </div>
                     <input className="btn hover:border-0 hover:shadow-xl bg-slate-800 hover:bg-gradient-to-r from-indigo-900 via-indigo-400 to-indigo-900 text-slate-100 hover:text-slate-900 my-3 w-full hover:font-bold" type="submit" />
                 </form>
