@@ -36,7 +36,22 @@ const Registration = () => {
             .then(res => res.json())
             .then(result => {
                 if (result.success) {
-                    console.log(result);
+                    const user = {
+                        name: data.Name,
+                        img: result.data.display_url,
+                        email: email
+                    }
+                    fetch('http://localhost:5000/user', {
+                        method: 'POST',
+                        headers: {
+                            'content-type': 'application/json',
+                        },
+                        body: JSON.stringify(user)
+                    })
+                        .then(res => res.json())
+                        .then(result => {
+                            console.log(result);
+                        })
                 }
             })
         createUserWithEmailAndPassword(email, password)

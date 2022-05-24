@@ -45,9 +45,9 @@ const Navbar = () => {
                         {user ? <button onClick={handleLogOut}>Log out</button> : <li><Link to='/login'>Login</Link></li>}
                     </ul>
                 </div>
-                <div className='navbar-end hidden sm:block'>
-                    <div className="dropdown dropdown-end flex justify-end">
-                        <label tabIndex="0" className="btn btn-ghost btn-circle avatar">
+                <div className='navbar-end '>
+                    <div className="dropdown dropdown-end justify-end hidden sm:block">
+                        <label tabIndex="0" className="btn z-10 btn-ghost btn-circle avatar">
                             <div className="w-10 rounded-full">
                                 <img src={user?.photoURL} alt='' />
                             </div>
@@ -56,14 +56,14 @@ const Navbar = () => {
                             <li>
                                 <p>{user?.displayName}</p>
                                 <p>{user?.email}</p>
-                                <Link to='/' className="justify-between">
+                                <Link to='/dashboard' className="justify-between">
                                     Profile
                                     <span className="badge">New</span>
                                 </Link>
                             </li>
                         </ul>
                     </div>
-                    <label tabIndex="0" htmlFor="my-drawer-2" className="btn btn-primary drawer-button lg:hidden"><BiMenu /></label>
+                    <label tabIndex="0  " htmlFor="my-drawer-2" className="btn btn-ghost drawer-button lg:hidden"><BiMenu className='text-2xl' /></label>
                 </div>
             </div>
         </nav>

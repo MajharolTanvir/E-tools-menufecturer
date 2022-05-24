@@ -22,7 +22,6 @@ const OrderDetailFrom = ({ tool }) => {
             toast(`Can not select less then ${tool.minQuantity}`)
             return
         }
-        console.log(data);
 
         const order = {
             name: data.Name,
