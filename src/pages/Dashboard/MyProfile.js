@@ -62,7 +62,7 @@ const MyProfile = () => {
                     <h2 className="card-title text-lg">Name: {person.name || displayName}</h2>
                     <p className='text-md text-left'>Email: {person.email || email}</p>
                     <p className='text-md text-left'>Phone: {person.number}</p>
-                    <p className='text-md text-left'>Email: {person.address}</p>
+                    <p className='text-md text-left'>Address: {person.address}</p>
                 </div>
             </div>
             <div>

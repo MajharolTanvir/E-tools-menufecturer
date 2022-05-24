@@ -13,6 +13,7 @@ import Dashboard from './pages/Dashboard/Dashboard';
 import MyProfile from './pages/Dashboard/MyProfile';
 import MyOrders from './pages/Dashboard/MyOrders';
 import AddReview from './pages/Dashboard/AddReview';
+import NotFound from './Shared/NotFound';
 
 function App() {
   return (
@@ -28,6 +29,7 @@ function App() {
         </Route>
         <Route path='/login' element={<Authentication></Authentication>}></Route>
         <Route path='/forgetPass' element={<ForgetPass></ForgetPass>}></Route>
+        <Route path='*' element={<NotFound></NotFound>}></Route>
       </Routes>
       <Footer></Footer>
       <ToastContainer></ToastContainer>

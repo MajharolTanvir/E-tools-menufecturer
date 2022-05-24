@@ -56,9 +56,9 @@ We are a manufacturer. We are looking for a front-end web developer to build a w
 
 15. Create `My Portfolio` route. In this route, you will have your name, email address, educational background, list of technologies or skills you have as a web developer. Add links of three of your projects (live website links). Adding descriptions or screenshots of your projects are optional.
 
-16. Create a meaningful 404 page (not found page). Add a meaningful image on the 404 page.
+<!-- 16. Create a meaningful 404 page (not found page). Add a meaningful image on the 404 page. -->
 
-17. Use a database to store information. It could be mongodb atlas or any other database.
+<!-- 17. Use a database to store information. It could be mongodb atlas or any other database. -->
 
 ### Bonus: 
 1. Meaningful `readme.md` file on both the client and server sides containing your website name, a link to your live site. Add at least five bullet points mention your website's different features and functionality.

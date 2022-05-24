@@ -10,8 +10,9 @@ import { useQuery } from 'react-query';
 
 const Navbar = () => {
     const [user, loading] = useAuthState(auth)
-    const { email } = user
-    const { data: person, isLoading } = useQuery(['person', email], () => fetch(`http://localhost:5000/user/${email}`).then(res => res.json()))
+    // console.log(user);
+
+    const { data: person, isLoading } = useQuery(['person', user?.email], () => fetch(`http://localhost:5000/user/${user?.email}`).then(res => res.json()))
 
 
     const handleLogOut = () => {
@@ -53,12 +54,12 @@ const Navbar = () => {
                     <div className="dropdown dropdown-end justify-end hidden sm:block">
                         <label tabIndex="0" className="btn z-10 btn-ghost btn-circle avatar">
                             <div className="w-10 rounded-full">
-                                <img src={user?.photoURL || person.img} alt='' />
+                                <img src={user?.photoURL || person?.img} alt='' />
                             </div>
                         </label>
                         <ul tabIndex="0" className="mt-3 p-2 shadow menu menu-compact dropdown-content bg-base-100 rounded-box w-52">
                             <li>
-                                <p>{user?.displayName || person.name}</p>
+                                <p>{user?.displayName || person?.name}</p>
                                 <p>{user?.email || person?.email}</p>
                                 <Link to='/dashboard' className="justify-between">
                                     Profile
