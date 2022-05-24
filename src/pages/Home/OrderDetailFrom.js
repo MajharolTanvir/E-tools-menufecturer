@@ -6,7 +6,6 @@ import auth from '../../firebase.init';
 
 const OrderDetailFrom = ({ tool }) => {
     const [user] = useAuthState(auth)
-    const [disabled, setDisabled] = useState(false)
     const [quantity, setQuantity] = useState(0)
     const { register, formState: { errors }, handleSubmit } = useForm();
 
@@ -128,10 +127,7 @@ const OrderDetailFrom = ({ tool }) => {
                         </label>
                         <input type='number' readOnly value={quantity && updatePrice} className='border-2 border-slate-500 px-1 py-2 text-black rounded-lg' {...register("Price", { required: true })} />
                     </div>
-                    {
-                        errors ? <input disabled className="btn hover:border-0 hover:shadow-xl bg-slate-800 hover:bg-gradient-to-r from-indigo-900 via-indigo-400 to-indigo-900 text-slate-100 hover:text-slate-900 my-3 w-full hover:font-bold" type="submit" /> :
-                            <input className="btn hover:border-0 hover:shadow-xl bg-slate-800 hover:bg-gradient-to-r from-indigo-900 via-indigo-400 to-indigo-900 text-slate-100 hover:text-slate-900 my-3 w-full hover:font-bold" type="submit" />
-                    }
+                    <input className="btn hover:border-0 hover:shadow-xl bg-slate-800 hover:bg-gradient-to-r from-indigo-900 via-indigo-400 to-indigo-900 text-slate-100 hover:text-slate-900 my-3 w-full hover:font-bold" type="submit" />
                 </form>
             </div>
         </div>

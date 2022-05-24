@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useForm } from "react-hook-form";
 import auth from '../../firebase.init'
 import { useAuthState, useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
@@ -28,12 +28,16 @@ const Login = () => {
         signInWithEmailAndPassword(email, password)
     }
 
+    useEffect(() => {
+        if (user || signInUser) {
+            navigate(from, { replace: true });
+        }
+    }, [from, navigate, signInUser, user])
+
     if (loading || signInLoading) {
         return <Loading></Loading>
     }
-    if (user || signInUser) {
-        navigate(from, { replace: true });
-    }
+    
     if (error) {
         toast(error.message)
     }
