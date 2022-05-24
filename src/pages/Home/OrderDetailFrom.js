@@ -6,6 +6,7 @@ import auth from '../../firebase.init';
 
 const OrderDetailFrom = ({ tool }) => {
     const [user] = useAuthState(auth)
+    const [disabled, setDisabled] = useState(false)
     const [quantity, setQuantity] = useState(0)
     const { register, formState: { errors }, handleSubmit } = useForm();
 
@@ -14,12 +15,12 @@ const OrderDetailFrom = ({ tool }) => {
     const onSubmit = data => {
         if (parseInt(data.Quantity) > parseInt(tool.available)) {
             console.log(parseInt(tool.available), parseInt(data.Quantity));
-            toast(`Can not select more then ${tool.available}`)
+            toast.error(`Can not select more then ${tool.available}`)
             return
         }
         if (parseInt(data.Quantity) < tool.minQuantity) {
             console.log(tool.minQuantity, parseInt(data.Quantity));
-            toast(`Can not select less then ${tool.minQuantity}`)
+            toast.error(`Can not select less then ${tool.minQuantity}`)
             return
         }
 
@@ -43,7 +44,7 @@ const OrderDetailFrom = ({ tool }) => {
             .then(res => res.json())
             .then(result => {
                 if (result.insertedId > 0) {
-                    toast('Your order added successFully')
+                    toast.success('Your order added successFully')
                 }
             })
     }
@@ -125,9 +126,12 @@ const OrderDetailFrom = ({ tool }) => {
                         <label className="label">
                             <span className="label-text text-white">Total price</span>
                         </label>
-                        <input type='number' readOnly value={updatePrice} className='border-2 border-slate-500 px-1 py-2 text-black rounded-lg' {...register("Price", { required: true })} />
+                        <input type='number' readOnly value={quantity && updatePrice} className='border-2 border-slate-500 px-1 py-2 text-black rounded-lg' {...register("Price", { required: true })} />
                     </div>
-                    <input className="btn hover:border-0 hover:shadow-xl bg-slate-800 hover:bg-gradient-to-r from-indigo-900 via-indigo-400 to-indigo-900 text-slate-100 hover:text-slate-900 my-3 w-full hover:font-bold" type="submit" />
+                    {
+                        errors ? <input disabled className="btn hover:border-0 hover:shadow-xl bg-slate-800 hover:bg-gradient-to-r from-indigo-900 via-indigo-400 to-indigo-900 text-slate-100 hover:text-slate-900 my-3 w-full hover:font-bold" type="submit" /> :
+                            <input className="btn hover:border-0 hover:shadow-xl bg-slate-800 hover:bg-gradient-to-r from-indigo-900 via-indigo-400 to-indigo-900 text-slate-100 hover:text-slate-900 my-3 w-full hover:font-bold" type="submit" />
+                    }
                 </form>
             </div>
         </div>
