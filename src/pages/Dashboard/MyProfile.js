@@ -17,7 +17,6 @@ const MyProfile = () => {
                 setPerson(result);
             })
     }, [email])
-    console.log(user);
 
     const imageStorageKey = 'e13c0deb95648d59c098b58894a2f7c7';
 

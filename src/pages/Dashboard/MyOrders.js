@@ -9,6 +9,7 @@ const MyOrders = () => {
     const { email } = user
     const { data: orders, isLoading } = useQuery(['orders', email], () => fetch(`http://localhost:5000/order/${email}`).then(res => res.json()))
 
+    console.log(orders);
     if (isLoading) {
         return <Loading></Loading>
     }
@@ -34,7 +35,7 @@ const MyOrders = () => {
                             <td>{order.productName}</td>
                             <td className='flex justify-center'><img className='w-10' src={order.productImg} alt="" /></td>
                             <td>{order.quantity}</td>
-                            <td>{order.productPrice}</td>
+                            <td>{order.price}</td>
                             <td><button>Delete</button></td>
                         </tr>)
                     }
