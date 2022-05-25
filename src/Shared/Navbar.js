@@ -12,17 +12,17 @@ const Navbar = () => {
     const [user, loading] = useAuthState(auth)
     // console.log(user);
 
-    const { data: person, isLoading } = useQuery(['person', user?.email], () => fetch(`http://localhost:5000/user/${user?.email}`).then(res => res.json()))
+    const { data: person } = useQuery(['person', user?.email], () => fetch(`http://localhost:5000/user/${user?.email}`).then(res => res.json()))
 
 
     const handleLogOut = () => {
         signOut(auth)
     }
-    if (loading || isLoading) {
+    if (loading) {
         return <Loading />
     }
     return (
-        <nav className="sticky top-0 z-10">
+        <nav className="sticky top-0 z-40">
             <div className="navbar bg-gradient-to-r from-cyan-500 to-blue-500">
                 <div className="navbar-start">
                     <div className="dropdown">

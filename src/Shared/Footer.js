@@ -8,16 +8,19 @@ const Footer = () => {
             <div className="footer justify-items-center p-10 bg-neutral text-neutral-content">
                 <div>
                     <span className="footer-title">Services</span>
-                    <p className="">Branding</p>
-                    <p className="">Design</p>
-                    <p className="">Marketing</p>
-                    <p className="">Advertisement</p>
+                    <p className="">Ball peen hammer</p>
+                    <p className="">Claw peen hammer</p>
+                    <p className="">Cross peen hammer</p>
+                    <p className="">Sledge hammer</p>
+                    <p className="">String peen hammer</p>
+                    <p className="">Tack hammer</p>
                 </div>
                 <div>
                     <span className="footer-title">Menubar</span>
                     <Link to='/' className="link link-hover">Home</Link>
-                    <Link to='/' className="link link-hover">Contact</Link>
-                    <Link to='/' className="link link-hover">Jobs</Link>
+                    <Link to='/dashboard' className="link link-hover">Dashboard</Link>
+                    <Link to='/portfolio' className="link link-hover">Portfolio</Link>
+                    <Link to='/blogs' className="link link-hover">Blogs</Link>
                     <Link to='/login' className="link link-hover">Login</Link>
                 </div>
                 <div>
