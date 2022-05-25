@@ -54,7 +54,7 @@ We are a manufacturer. We are looking for a front-end web developer to build a w
 
     14.6 What is a unit test? Why should write unit tests?
 
-15. Create `My Portfolio` route. In this route, you will have your name, email address, educational background, list of technologies or skills you have as a web developer. Add links of three of your projects (live website links). Adding descriptions or screenshots of your projects are optional.
+<!-- 15. Create `My Portfolio` route. In this route, you will have your name, email address, educational background, list of technologies or skills you have as a web developer. Add links of three of your projects (live website links). Adding descriptions or screenshots of your projects are optional. -->
 
 <!-- 16. Create a meaningful 404 page (not found page). Add a meaningful image on the 404 page. -->
 

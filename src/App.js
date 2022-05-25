@@ -15,6 +15,7 @@ import MyOrders from './pages/Dashboard/MyOrders';
 import AddReview from './pages/Dashboard/AddReview';
 import NotFound from './Shared/NotFound';
 import MyPortfolio from './pages/MyPortfolio/MyPortfolio';
+import Blogs from './pages/Blogs/Blogs';
 
 function App() {
   return (
@@ -28,6 +29,7 @@ function App() {
           <Route path='myOrder' element={<MyOrders />}></Route>
           <Route path='addReview' element={<AddReview />}></Route>
         </Route>
+        <Route path='/blogs' element={<Blogs></Blogs>}></Route>
         <Route path='/portfolio' element={<MyPortfolio></MyPortfolio>}></Route>
         <Route path='/login' element={<Authentication></Authentication>}></Route>
         <Route path='/login' element={<Authentication></Authentication>}></Route>
