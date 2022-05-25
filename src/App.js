@@ -16,6 +16,7 @@ import AddReview from './pages/Dashboard/AddReview';
 import NotFound from './Shared/NotFound';
 import MyPortfolio from './pages/MyPortfolio/MyPortfolio';
 import Blogs from './pages/Blogs/Blogs';
+import Payment from './pages/Dashboard/Payment';
 
 function App() {
   return (
@@ -28,6 +29,7 @@ function App() {
           <Route index element={<MyProfile />}></Route>
           <Route path='myOrder' element={<MyOrders />}></Route>
           <Route path='addReview' element={<AddReview />}></Route>
+          <Route path='payment/:id' element={<Payment />}></Route>
         </Route>
         <Route path='/blogs' element={<Blogs></Blogs>}></Route>
         <Route path='/portfolio' element={<MyPortfolio></MyPortfolio>}></Route>

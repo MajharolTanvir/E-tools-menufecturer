@@ -53,6 +53,7 @@ const OrderDetailFrom = ({ tool }) => {
             .then(result => {
                 toast.success('Your order added successFully')
                 reset()
+                setQuantity(0)
             })
     }
 

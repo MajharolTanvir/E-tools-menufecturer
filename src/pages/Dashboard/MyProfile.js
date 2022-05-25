@@ -1,26 +1,26 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import auth from '../../firebase.init';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { useForm } from 'react-hook-form';
 import { toast } from 'react-toastify';
+import { useQuery } from 'react-query';
+import Loading from '../../Shared/Loading';
 
 const MyProfile = () => {
-    const [person, setPerson] = useState({})
     const [user] = useAuthState(auth)
     const { displayName, email, photoURL } = user
     const { register, handleSubmit } = useForm();
 
-    useEffect(() => {
-        fetch(`http://localhost:5000/user/${email}`)
-            .then(res => res.json())
-            .then(result => {
-                setPerson(result);
-            })
-    }, [email])
+    const { data: person, isLoading, refetch } = useQuery(['person', email], () => fetch(`http://localhost:5000/user/${email}`).then(res => res.json()))    
 
     const imageStorageKey = 'e13c0deb95648d59c098b58894a2f7c7';
 
+    if (isLoading) {
+        return <Loading />
+    }
+
     const onSubmit = data => {
+        console.log(data);
         const image = data.Image[0]
         const formData = new FormData();
         formData.append('image', image);
@@ -36,6 +36,7 @@ const MyProfile = () => {
                         img: result.data.display_url,
                         address: data.Address,
                         number: data.Number,
+                        country: data.Country
                     }
                     fetch(`http://localhost:5000/user/${email}`, {
                         method: 'PUT',
@@ -48,6 +49,7 @@ const MyProfile = () => {
                         .then(data => {
                             if (data.modifiedCount > 0) {
                                 toast('Your profile update successFul')
+                                refetch()
                             };
                         })
                 }
@@ -60,9 +62,10 @@ const MyProfile = () => {
                 <figure><img src={person.img || photoURL} className='rounded-3xl w-60 p-2' alt="profile" /></figure>
                 <div className="card-body">
                     <h2 className="card-title text-lg">Name: {person.name || displayName}</h2>
-                    <p className='text-md text-left'>Email: {person.email || email}</p>
-                    <p className='text-md text-left'>Phone: {person.number}</p>
-                    <p className='text-md text-left'>Address: {person.address}</p>
+                    <span className='text-md text-left'>Email: {person.email || email}</span>
+                    <span className='text-md text-left'>Phone: {person.number}</span>
+                    <span className='text-md text-left'>Address: {person.address}</span>
+                    <span className='text-md text-left'>Country: {person.country}</span>
                 </div>
             </div>
             <div>
@@ -84,6 +87,14 @@ const MyProfile = () => {
                                     </label>
                                     <input type='number' className='border-2 border-slate-500 px-1 py-2 rounded-lg' {...register("Number", { required: true })} />
                                 </div>
+
+                                <div className="form-control text-black w-full max-w-xs">
+                                    <label className="label">
+                                        <span className="label-text text-white">Country</span>
+                                    </label>
+                                    <input type='text' className='border-2 border-slate-500 px-1 py-2 rounded-lg' {...register("Country", { required: true })} />
+                                </div>
+
                                 <div className="form-control w-full text-black max-w-xs">
                                     <label className="label">
                                         <span className="label-text text-white">Your Photo</span>

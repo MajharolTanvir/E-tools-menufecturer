@@ -12,13 +12,11 @@ const MyOrders = () => {
     const { email } = user
     const { data: orders, isLoading, refetch } = useQuery(['orders', email], () => fetch(`http://localhost:5000/order/${email}`).then(res => res.json()))
 
-
-
     if (isLoading) {
         return <Loading></Loading>
     }
     return (
-        <div className="overflow-x-auto my-10">
+        <div className="overflow-x-auto my-10 md:mx-10">
             <table className="table table-compact w-full text-center">
                 <thead>
                     <tr>

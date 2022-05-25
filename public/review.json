@@ -1,0 +1,23 @@
+[
+    {
+            "name": "Juboraj islam mamun",
+            "rating": 5,
+            "image": "https: //encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTOKgf1btqasr29ElrKVN80RPZxRDi4qTMnwQ&usqp=CAU",
+            "country": "Japan",
+            "Comment": "This company have the most strong tools in others company tools"
+    },
+    {
+            "name": "Fahad mohammad",
+            "rating": 5,
+            "image": "https: //encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSvO6ew76HbLIH3b14xqvUEcq-dFdlKPzwQWQ&usqp=CAU",
+            "country": "America",
+            "Comment": "This is a great company to deal with their and fast forward to fast shipping"
+    },
+    {
+            "name": "Ayan khan",
+            "rating": 5,
+            "image": "https: //images.pexels.com/photos/2182970/pexels-photo-2182970.jpeg?auto=compress&cs=tinysrgb&dpr=1",
+            "country": "London",
+            "Comment": "This is a great opportunity to buy their each product as a safe price"
+    }
+]
