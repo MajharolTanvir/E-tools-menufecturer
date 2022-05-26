@@ -25,7 +25,7 @@ const OrderDetails = ({ order, setCancel, i }) => {
                 {(order.price && order.paid) && <label htmlFor="cancel" disabled className="btn btn-xs modal-button btn-error">Cancel</label>}
             </td>
             {
-                order.transactionId && <td>{order.transactionId }</td>
+                order.transactionId && <td>{order.transactionId}</td>
             }
         </tr>
     );

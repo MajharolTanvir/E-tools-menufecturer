@@ -1,22 +1,45 @@
-import React, { useState } from 'react';
+import { signOut } from 'firebase/auth';
+import React, { useEffect, useState } from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
-import { useQuery } from 'react-query';
+import { useNavigate } from 'react-router-dom';
 import auth from '../../firebase.init';
-import Loading from '../../Shared/Loading';
 import CancelOrder from './CancelOrder';
 import OrderDetails from './OrderDetails';
 
 const MyOrders = () => {
     const [user] = useAuthState(auth)
     const [cancel, setCancel] = useState(null)
+    const [orders, setOrders] = useState([])
     const { email } = user
-    const { data: orders, isLoading, refetch } = useQuery(['orders', email], () => fetch(`http://localhost:5000/order/${email}`).then(res => res.json()))
 
-    if (isLoading) {
-        return <Loading></Loading>
-    }
+    const navigate = useNavigate()
+
+    useEffect(() => {
+        fetch(`http://localhost:5000/order/${email}`, {
+            method: 'GET',
+            headers: {
+                'authorization': `Bearer ${localStorage.getItem('accessToken')}`
+            }
+        })
+            .then(res => {
+                console.log(res);
+                if (res.status === 401 || res.status === 403) {
+                    signOut(auth)
+                    localStorage.removeItem('accessToken')
+                    navigate('/login')
+                }
+                return res.json()
+            })
+            .then(data => {
+                setOrders(data)
+            })
+    }, [email])
+
+    // if (isLoading) {
+    //     return <Loading></Loading>
+    // }
     return (
-        <div className="overflow-x-auto my-8 md:mx-10">
+        <div className="overflow-x-auto my-8 md:mx-8">
             <table className="table table-compact w-full text-center">
                 <thead>
                     <tr>
@@ -57,7 +80,7 @@ const MyOrders = () => {
             </table>
             {cancel && <CancelOrder
                 cancel={cancel}
-                refetch={refetch}
+                // refetch={refetch}
                 setCancel={setCancel}
             ></CancelOrder>}
         </div>

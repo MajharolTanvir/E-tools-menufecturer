@@ -17,6 +17,11 @@ import NotFound from './Shared/NotFound';
 import MyPortfolio from './pages/MyPortfolio/MyPortfolio';
 import Blogs from './pages/Blogs/Blogs';
 import Payment from './pages/Dashboard/Payment';
+import MakeAdmin from './pages/Dashboard/MakeAdmin';
+import AdminPrivate from './Shared/AdminPrivate';
+import ManageAllProducts from './pages/Dashboard/ManageAllProducts';
+import ManageAllOrders from './pages/Dashboard/ManageAllOrders';
+import AddProduct from './pages/Dashboard/AddProduct';
 
 function App() {
   return (
@@ -30,6 +35,10 @@ function App() {
           <Route path='myOrder' element={<MyOrders />}></Route>
           <Route path='addReview' element={<AddReview />}></Route>
           <Route path='payment/:id' element={<Payment />}></Route>
+          <Route path='users' element={<AdminPrivate><MakeAdmin /></AdminPrivate>}></Route>
+          <Route path='allProduct' element={<AdminPrivate><ManageAllProducts /></AdminPrivate>}></Route>
+          <Route path='allOrders' element={<AdminPrivate><ManageAllOrders /></AdminPrivate>}></Route>
+          <Route path='addProduct' element={<AdminPrivate><AddProduct /></AdminPrivate>}></Route>
         </Route>
         <Route path='/blogs' element={<Blogs></Blogs>}></Route>
         <Route path='/portfolio' element={<MyPortfolio></MyPortfolio>}></Route>

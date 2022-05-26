@@ -24,11 +24,7 @@ const Registration = () => {
     const token = useToken(user)
     const from = location.state?.from?.pathname || "/";
 
-    useEffect(() => {
-        if (token) {
-            navigate(from, { replace: true });
-        }
-    }, [from, navigate, token])
+
 
     const onSubmit = data => {
         const image = data.Image[0]
@@ -67,8 +63,12 @@ const Registration = () => {
         sendEmailVerification()
         toast('Verification email send successful')
     }
+
     if (loading || sending) {
         return <Loading></Loading>
+    }
+    if (token) {
+        navigate(from, { replace: true });
     }
     if (error || SendingError) {
         toast(error?.message || SendingError?.message)
