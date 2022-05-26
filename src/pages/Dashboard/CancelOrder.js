@@ -16,7 +16,7 @@ const CancelOrder = ({ cancel, refetch, setCancel }) => {
             })
     }
     return (
-        <div>
+        <div className=''>
             <label htmlFor="cancel" className="btn modal-button">Cancel</label>
             <input type="checkbox" id="cancel" className="modal-toggle" />
             <div className="modal modal-bottom sm:modal-middle">

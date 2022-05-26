@@ -17,13 +17,16 @@ const OrderDetails = ({ order, setCancel, i }) => {
             <td>{order?.quantity}</td>
             <td>{order?.price}</td>
             <td>
-                {(order.price && !order.Paid) && <button className='btn btn-info btn-xs' onClick={() => handlePay(order._id)}>Pay</button>}
-                {(order.price && order.Paid) && <button className='btn btn-success btn-xs'>Paid</button>}
+                {(order.price && !order.paid) && <button className='btn btn-info btn-xs' onClick={() => handlePay(order._id)}>Pay</button>}
+                {(order.price && order.paid) && <button disabled className='btn btn-success btn-xs'>Pay</button>}
             </td>
             <td>
                 {(order.price && !order.paid) && <label htmlFor="cancel" onClick={() => setCancel(order)} className="btn btn-xs modal-button btn-error">Cancel</label>}
                 {(order.price && order.paid) && <label htmlFor="cancel" disabled className="btn btn-xs modal-button btn-error">Cancel</label>}
             </td>
+            {
+                order.transactionId && <td>{order.transactionId }</td>
+            }
         </tr>
     );
 };

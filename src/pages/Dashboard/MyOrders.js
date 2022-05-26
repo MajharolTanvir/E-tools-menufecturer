@@ -16,18 +16,19 @@ const MyOrders = () => {
         return <Loading></Loading>
     }
     return (
-        <div className="overflow-x-auto my-10 md:mx-10">
+        <div className="overflow-x-auto my-8 md:mx-10">
             <table className="table table-compact w-full text-center">
                 <thead>
                     <tr>
                         <th>Sl no.</th>
                         <th>Name</th>
                         <th>Product name</th>
-                        <th>Product image</th>
+                        <th>Image</th>
                         <th>Product quantity</th>
                         <th>Product price</th>
                         <th>Action</th>
                         <th>Action</th>
+                        <th>TransactionId</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -45,11 +46,12 @@ const MyOrders = () => {
                         <th>Sl no.</th>
                         <th>Name</th>
                         <th>Product name</th>
-                        <th>Product image</th>
+                        <th>Image</th>
                         <th>Product quantity</th>
                         <th>Product price</th>
                         <th>Action</th>
                         <th>Action</th>
+                        <th>TransactionId</th>
                     </tr>
                 </tfoot>
             </table>

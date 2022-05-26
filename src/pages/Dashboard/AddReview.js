@@ -1,4 +1,3 @@
-import { configure } from '@testing-library/react';
 import React, { useEffect, useState } from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { useForm } from 'react-hook-form';
@@ -40,6 +39,7 @@ const AddReview = () => {
             .then(res => res.json())
             .then(data => {
                 toast.success('Thanks to your review')
+                reset()
             })
     }
 

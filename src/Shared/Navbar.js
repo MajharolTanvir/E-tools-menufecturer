@@ -28,6 +28,7 @@ const Navbar = () => {
     }
     const handleLogOut = () => {
         signOut(auth)
+        localStorage.removeItem('accessToken')
     }
     return (
         <nav className="sticky top-0 z-40">

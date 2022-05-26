@@ -6,6 +6,7 @@ import Loading from '../../Shared/Loading';
 import { toast } from 'react-toastify';
 import SocialLogin from './SocialLogin';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
+import useToken from '../../hooks/useToken';
 
 const Login = () => {
     const [user, loading] = useAuthState(auth)
@@ -18,6 +19,8 @@ const Login = () => {
         error,
     ] = useSignInWithEmailAndPassword(auth);
 
+    const [token] = useToken(user || signInUser)
+
     const navigate = useNavigate()
     const location = useLocation()
     const from = location.state?.from?.pathname || "/";
@@ -29,10 +32,10 @@ const Login = () => {
     }
 
     useEffect(() => {
-        if (user || signInUser) {
+        if (token) {
             navigate(from, { replace: true });
         }
-    }, [from, navigate, signInUser, user])
+    }, [token, from, navigate])
 
     if (loading || signInLoading) {
         return <Loading></Loading>
