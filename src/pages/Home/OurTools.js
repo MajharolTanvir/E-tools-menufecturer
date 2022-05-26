@@ -29,7 +29,7 @@ const OurTools = () => {
                             </figure>
                             <div className="card-body items-start text-Justify">
                                 <h2 className="card-title"> {tool.name}</h2>
-                                <p><span className='text-md font-bold'>Description:</span> {tool.about}</p>
+                                <p><span className='text-md font-bold'>Description:</span> {tool.about.slice(0, 200)}</p>
                                 <p><span className='text-md font-bold'>Available quantity:</span> {tool.available}</p>
                                 <p><span className='text-md font-bold'>Minimum shipping:</span> {tool.minQuantity}</p>
                                 <p><span className='text-md font-bold'>Per item Price:</span> {tool.price}</p>
