@@ -38,9 +38,9 @@ We are a manufacturer. We are looking for a front-end web developer to build a w
 
 <!-- 12. If an admin logs in, he/she will not see the options that a user sees except `My Profile`. This means an admin will not see my orders and add a review link.  Instead, an admin will see `My Profile`, `Manage All Orders`, `Add A Product`, `Make Admin`, `Manage Products`. Based on your website idea, you can change the name of these menu names.  -->
 
-13. An Admin should be able to make another user an admin. If an admin wants, he/she will be able to add a product on the add a product page. After adding the product, this product will appear on the `home` page. Please note, to add an image for a new product, you can just upload the image directly to the image hosting sites like imgbb, etc using API. Alternatively, you can have an input field to add the link to the image.
+<!-- 13. An Admin should be able to make another user an admin. If an admin wants, he/she will be able to add a product on the add a product page. After adding the product, this product will appear on the `home` page. Please note, to add an image for a new product, you can just upload the image directly to the image hosting sites like imgbb, etc using API. Alternatively, you can have an input field to add the link to the image. -->
 
-14. One route will be `Blogs`. This will be a open route. Anyone visiting your website will see it. You will need to answer at least five questions on the blogs page. This won't be a protected route. We recommend answering all six questions.
+<!-- 14. One route will be `Blogs`. This will be a open route. Anyone visiting your website will see it. You will need to answer at least five questions on the blogs page. This won't be a protected route. We recommend answering all six questions.
 
     14.1 How will you improve the performance of a React Application?
 
@@ -52,7 +52,7 @@ We are a manufacturer. We are looking for a front-end web developer to build a w
     
     14.5 You have an array of products. Each object has a name, price, description, etc. How will you implement a search to find products by name?  
 
-    14.6 What is a unit test? Why should write unit tests?
+    14.6 What is a unit test? Why should write unit tests? -->
 
 <!-- 15. Create `My Portfolio` route. In this route, you will have your name, email address, educational background, list of technologies or skills you have as a web developer. Add links of three of your projects (live website links). Adding descriptions or screenshots of your projects are optional. -->
 
@@ -61,7 +61,7 @@ We are a manufacturer. We are looking for a front-end web developer to build a w
 <!-- 17. Use a database to store information. It could be mongodb atlas or any other database. -->
 
 ### Bonus: 
-1. Meaningful `readme.md` file on both the client and server sides containing your website name, a link to your live site. Add at least five bullet points mention your website's different features and functionality.
+<!-- 1. Meaningful `readme.md` file on both the client and server sides containing your website name, a link to your live site. Add at least five bullet points mention your website's different features and functionality. -->
 
 <!-- 2. At least 15 meaningful GitHub commits for the client-side and at least 10 meaningful commits for the server-side repository. -->
 
@@ -71,15 +71,15 @@ We are a manufacturer. We are looking for a front-end web developer to build a w
 
 <!-- 5. Clean and organized Code. Organize components and add comments when needed. use `.env` file on the server, `.env.local` file on the client to hide db user and password, etc. Also use the `.gitignore` file -->
 
-6. On the `Manage All Orders` page for the admin, the logged-in admin will see the orders placed by every user. If multiple users use this website to place orders, everyone's order will be displayed here. The orders that are not paid will show `unpaid`. And the orders that are paid, an Admin can update the status of a paid order. After placing an order and completing the payment, every order will have a default status: `pending`. On the Manage All Orders page, an admin will be able to update the status of the pending to `shipped` status. This could be a simple button to update the pending status. (don't overthink, this is a simple button to update the status field of the order. Use Id to find the order and set the status to approved). Also, it would be nice if you could do one additional task here: The admin will be able to cancel (cancel means admin can delete an order) that is not paid yet. Make sure to add a confirmation before deleting. 
+<!-- 6. On the `Manage All Orders` page for the admin, the logged-in admin will see the orders placed by every user. If multiple users use this website to place orders, everyone's order will be displayed here. The orders that are not paid will show `unpaid`. And the orders that are paid, an Admin can update the status of a paid order. After placing an order and completing the payment, every order will have a default status: `pending`. On the Manage All Orders page, an admin will be able to update the status of the pending to `shipped` status. This could be a simple button to update the pending status. (don't overthink, this is a simple button to update the status field of the order. Use Id to find the order and set the status to approved). Also, it would be nice if you could do one additional task here: The admin will be able to cancel (cancel means admin can delete an order) that is not paid yet. Make sure to add a confirmation before deleting.  -->
 
-7. Implement the basic version of the `jwt` token. Upon login, you will create a jwt token and store it on the client-side, and for the My Items page, you will send the token with the call and verify the user. Implementing 401 and 403 is optional. Make sure you have implemented `jwt` token and create token and store it on the client side for both email/password based authentication as well as for social login.
+<!-- 7. Implement the basic version of the `jwt` token. Upon login, you will create a jwt token and store it on the client-side, and for the My Items page, you will send the token with the call and verify the user. Implementing 401 and 403 is optional. Make sure you have implemented `jwt` token and create token and store it on the client side for both email/password based authentication as well as for social login. -->
 
-8. on the `Manage Products` page, an admin can delete any products. Please make sure there is a confirmation. After deleting that product will not appear on the `home` page. Use a meaningful and good looking confirmation modal. Avoid using browser default confirm.
+<!-- 8. on the `Manage Products` page, an admin can delete any products. Please make sure there is a confirmation. After deleting that product will not appear on the `home` page. Use a meaningful and good looking confirmation modal. Avoid using browser default confirm. -->
 
-9. Use `react query` for at least one API call. 
+<!-- 9. Use `react query` for at least one API call.  -->
 
-10. Use `react hook form` at least one form. For the rest of the forms, you can either use react hook form or basic html form or any other form you want.
+<!-- 10. Use `react hook form` at least one form. For the rest of the forms, you can either use react hook form or basic html form or any other form you want. -->
 
 ### Optional but highly encouraged to do:
 Make sure you have done everything on the main part and bonus. Deploy and test everything. After that, you may try optional things.

@@ -33,11 +33,7 @@ const MyOrders = () => {
             .then(data => {
                 setOrders(data)
             })
-    }, [email])
-
-    // if (isLoading) {
-    //     return <Loading></Loading>
-    // }
+    }, [email, navigate])
     return (
         <div className="overflow-x-auto my-8 md:mx-8">
             <table className="table table-compact w-full text-center">

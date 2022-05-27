@@ -1,13 +1,31 @@
 import React from 'react';
 import { useQuery } from 'react-query';
+import { toast } from 'react-toastify';
 import Loading from '../../Shared/Loading'
 
 const ManageAllProducts = () => {
-    const { data: tools, isLoading } = useQuery('tools', () => fetch('http://localhost:5000/tools').then(res => res.json()))
+    const { data: tools, isLoading, refetch } = useQuery('tools', () => fetch('http://localhost:5000/tools').then(res => res.json()))
 
     if (isLoading) {
         return <Loading />
     }
+
+    const handleDelete = id => {
+        fetch(`http://localhost:5000/deleteTool/${id}`, {
+            method: 'DELETE',
+            headers: {
+                'authorization': `Bearer ${localStorage.getItem('accessToken')}`
+            }
+        })
+            .then(res => res.json())
+            .then(data => {
+                if (data.deletedCount > 0) {
+                    toast.success('Your item deleted')
+                    refetch()
+                }
+            })
+    }
+
     return (
         <div className="overflow-x-auto mx-10 my-10">
             <table className="table w-full">
@@ -31,7 +49,7 @@ const ManageAllProducts = () => {
                             <td>{tool.available}</td>
                             <td>{tool.minQuantity}</td>
                             <td>{tool.price}</td>
-                            <td>Blue</td>
+                            <td><button className='btn btn-error btn-xs' onClick={() => handleDelete(tool._id)}>Delete</button></td>
                         </tr>)
                     }
 
