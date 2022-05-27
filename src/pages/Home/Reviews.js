@@ -20,7 +20,7 @@ const Reviews = () => {
                     <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-4 gap-y-4 lg:gap-y-0'>
                         {
                             reviews.map(review =>
-                                <div key={review._id} className="card w-full bg-base-100 pt-8 shadow-xl">
+                                <div key={review._id} className="card w-full bg-base-100 pt-8 shadow-xl my-6">
                                     <div className="avatar mx-auto">
                                         <div className="w-24 mask mask-squircle">
                                             <img src={review.image} alt='' />
@@ -31,13 +31,41 @@ const Reviews = () => {
                                         <p>{review.country}</p>
                                         <p>{review?.Comment}</p>
                                         <div>
-                                            <div className="rating">
-                                                <input type="radio" name="rating-2" className="mask mask-star-2 bg-orange-400" />
-                                                <input type="radio" name="rating-2" className="mask mask-star-2 bg-orange-400" />
-                                                <input type="radio" name="rating-2" className="mask mask-star-2 bg-orange-400" />
-                                                <input type="radio" name="rating-2" className="mask mask-star-2 bg-orange-400" defaultChecked />
-                                                <input type="radio" name="rating-2" className="mask mask-star-2 bg-orange-400" />
-                                            </div>
+                                            {
+                                                review.rating === 5 && <div className="rating">
+                                                    <input type="radio" name="rating-2" className="mask mask-star-2 bg-orange-400" />
+                                                    <input type="radio" name="rating-2" className="mask mask-star-2 bg-orange-400" />
+                                                    <input type="radio" name="rating-2" className="mask mask-star-2 bg-orange-400" />
+                                                    <input type="radio" name="rating-2" className="mask mask-star-2 bg-orange-400" defaultChecked />
+                                                    <input type="radio" name="rating-2" className="mask mask-star-2 bg-orange-400" />
+                                                </div>
+                                            }
+                                            {
+                                                review.rating === 4 && <div className="rating">
+                                                    <input type="radio" name="rating-2" className="mask mask-star-2 bg-orange-400" />
+                                                    <input type="radio" name="rating-2" className="mask mask-star-2 bg-orange-400" />
+                                                    <input type="radio" name="rating-2" className="mask mask-star-2 bg-orange-400" />
+                                                    <input type="radio" name="rating-2" className="mask mask-star-2 bg-orange-400" defaultChecked />
+                                                </div>
+                                            }
+                                            {
+                                                review.rating === 3 && <div className="rating">
+                                                    <input type="radio" name="rating-2" className="mask mask-star-2 bg-orange-400" />
+                                                    <input type="radio" name="rating-2" className="mask mask-star-2 bg-orange-400" />
+                                                    <input type="radio" name="rating-2" className="mask mask-star-2 bg-orange-400" />
+                                                </div>
+                                            }
+                                            {
+                                                review.rating === 2 && <div className="rating">
+                                                    <input type="radio" name="rating-2" className="mask mask-star-2 bg-orange-400" />
+                                                    <input type="radio" name="rating-2" className="mask mask-star-2 bg-orange-400" />
+                                                </div>
+                                            }
+                                            {
+                                                review.rating === 1 && <div className="rating">
+                                                    <input type="radio" name="rating-2" className="mask mask-star-2 bg-orange-400" />
+                                                </div>
+                                            }
                                         </div>
                                     </div>
                                 </div>

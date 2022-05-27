@@ -15,10 +15,10 @@ const Users = ({ user, i, refetch }) => {
                 if (res.status === 403) {
                     toast('Failed to make an admin')
                 }
-                res.json()
+                return res.json()
             })
             .then(data => {
-                if (data.modifiedCount > 0) {
+                if (data.modifiedCount) {
                     refetch()
                     toast('Make admin successfully')
                 }

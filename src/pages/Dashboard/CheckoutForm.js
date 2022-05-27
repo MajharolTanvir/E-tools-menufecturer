@@ -6,7 +6,6 @@ const CheckOutForm = ({ order }) => {
     const elements = useElements()
     const [error, setError] = useState('')
     const [success, setSuccess] = useState('')
-    const [setProcessing] = useState(false)
     const [transactionId, setTransactionId] = useState('')
     const [clientSecret, setClientSecret] = useState("");
 
@@ -47,7 +46,6 @@ const CheckOutForm = ({ order }) => {
         });
         setError(error?.message || '')
         setSuccess('')
-        setProcessing(true)
 
         // confirm card payment
         const { paymentIntent, error: intentError } = await stripe.confirmCardPayment(
@@ -64,11 +62,9 @@ const CheckOutForm = ({ order }) => {
         );
         if (intentError) {
             setError(intentError?.message)
-            setProcessing(false)
         }
         else {
             setError('')
-            console.log(paymentIntent);
             setSuccess('Congrats! your payment is successful')
             setTransactionId(paymentIntent.id)
 
@@ -86,7 +82,6 @@ const CheckOutForm = ({ order }) => {
             })
                 .then(res => res.json())
                 .then(data => {
-                    setProcessing(false)
                     console.log(data);
                 })
         }

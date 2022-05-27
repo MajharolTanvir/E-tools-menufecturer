@@ -19,8 +19,8 @@ const MyProfile = () => {
         return <Loading />
     }
 
+
     const onSubmit = data => {
-        console.log(data);
         const image = data.Image[0]
         const formData = new FormData();
         formData.append('image', image);

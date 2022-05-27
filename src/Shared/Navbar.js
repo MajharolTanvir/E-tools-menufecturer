@@ -6,6 +6,7 @@ import auth from '../firebase.init';
 import logo from '../image/logo.png'
 import Loading from '../Shared/Loading'
 import { BiMenu } from "react-icons/bi";
+import userImg from '../image/man-300x300.png'
 
 const Navbar = () => {
     const [user, loading] = useAuthState(auth)
@@ -67,7 +68,9 @@ const Navbar = () => {
                     <div className="dropdown dropdown-end justify-end hidden sm:block">
                         <label tabIndex="0" className="btn z-10 btn-ghost btn-circle avatar">
                             <div className="w-10 rounded-full">
-                                <img src={user?.photoURL || img} alt='' />
+                                {
+                                    user?.photoURL || img ? <img src={user?.photoURL || img} alt='' /> : <img src={userImg} alt='' />
+                                }
                             </div>
                         </label>
                         <ul tabIndex="0" className="mt-3 p-2 shadow menu menu-compact dropdown-content bg-base-100 rounded-box w-52">

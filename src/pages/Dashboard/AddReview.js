@@ -26,8 +26,8 @@ const AddReview = () => {
             name: name,
             image: image,
             country: country,
-            rating: data.Rating,
-            comment: data.Comment
+            rating: parseInt(data.Rating),
+            Comment: data.Comment
         }
         fetch('https://e-tools-manufacturer.herokuapp.com/rating', {
             method: 'POST',

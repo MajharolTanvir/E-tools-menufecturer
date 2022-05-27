@@ -76,7 +76,7 @@ const MyPortfolio = () => {
                             <li>React Query</li>
                             <li>React hook form</li>
                             <li>Json web token</li>
-                            <li>Strip</li>
+                            <li>Stripe</li>
                         </ul>
                     </div>
                 </div>
