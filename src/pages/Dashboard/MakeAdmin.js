@@ -4,7 +4,7 @@ import Loading from '../../Shared/Loading';
 import Users from './Users';
 
 const MakeAdmin = () => {
-    const { data: users, loading, refetch } = useQuery('users', () => fetch('http://localhost:5000/user', {
+    const { data: users, loading, refetch } = useQuery('users', () => fetch('https://e-tools-manufacturer.herokuapp.com/user', {
         method: 'GET',
         headers: {
             'authorization': `Bearer ${localStorage.getItem('accessToken')}`

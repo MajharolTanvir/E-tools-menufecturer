@@ -14,7 +14,7 @@ const OrderDetailFrom = ({ tool }) => {
 
     const updatePrice = tool.price * parseInt(quantity)
 
-    const { data: person, isLoading } = useQuery(['person', email], () => fetch(`http://localhost:5000/user/${email}`).then(res => res.json()))
+    const { data: person, isLoading } = useQuery(['person', email], () => fetch(`https://e-tools-manufacturer.herokuapp.com/user/${email}`).then(res => res.json()))
 
     if (isLoading) {
         return <Loading />
@@ -42,7 +42,7 @@ const OrderDetailFrom = ({ tool }) => {
             productName: tool.name,
             price: updatePrice,
         }
-        fetch('http://localhost:5000/orders', {
+        fetch('https://e-tools-manufacturer.herokuapp.com/orders', {
             method: "POST",
             headers: {
                 'content-type': 'application/json',

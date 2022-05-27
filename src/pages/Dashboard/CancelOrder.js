@@ -4,7 +4,7 @@ import { toast } from 'react-toastify';
 const CancelOrder = ({ cancel, refetch, setCancel }) => {
 
     const handleDeleteOrder = id => {
-        fetch(`http://localhost:5000/order/${id}`, {
+        fetch(`https://e-tools-manufacturer.herokuapp.com/order/${id}`, {
             method: 'DELETE',
         })
             .then(res => res.json())

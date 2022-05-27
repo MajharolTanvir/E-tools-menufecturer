@@ -4,14 +4,14 @@ import { toast } from 'react-toastify';
 import Loading from '../../Shared/Loading'
 
 const ManageAllProducts = () => {
-    const { data: tools, isLoading, refetch } = useQuery('tools', () => fetch('http://localhost:5000/tools').then(res => res.json()))
+    const { data: tools, isLoading, refetch } = useQuery('tools', () => fetch('https://e-tools-manufacturer.herokuapp.com/tools').then(res => res.json()))
 
     if (isLoading) {
         return <Loading />
     }
 
     const handleDelete = id => {
-        fetch(`http://localhost:5000/deleteTool/${id}`, {
+        fetch(`https://e-tools-manufacturer.herokuapp.com/deleteTool/${id}`, {
             method: 'DELETE',
             headers: {
                 'authorization': `Bearer ${localStorage.getItem('accessToken')}`

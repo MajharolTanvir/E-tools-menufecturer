@@ -12,7 +12,7 @@ const ManageAllOrders = () => {
     const [cancel, setCancel] = useState(null)
 
     const navigate = useNavigate()
-    const { data: orders, isLoading, refetch } = useQuery('orders', () => fetch('http://localhost:5000/order', {
+    const { data: orders, isLoading, refetch } = useQuery('orders', () => fetch('https://e-tools-manufacturer.herokuapp.com/order', {
         method: 'GET',
         headers: {
             'authorization': `Bearer ${localStorage.getItem('accessToken')}`

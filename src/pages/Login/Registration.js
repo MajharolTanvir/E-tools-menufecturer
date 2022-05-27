@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { useCreateUserWithEmailAndPassword, useSendEmailVerification } from 'react-firebase-hooks/auth';
 import { useForm } from 'react-hook-form';
 import { useLocation, useNavigate } from 'react-router-dom';
@@ -45,7 +45,7 @@ const Registration = () => {
                         img: result.data.display_url,
                         email: email
                     }
-                    fetch('http://localhost:5000/user', {
+                    fetch('https://e-tools-manufacturer.herokuapp.com/user', {
                         method: 'POST',
                         headers: {
                             'content-type': 'application/json',
