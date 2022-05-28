@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { useForm } from 'react-hook-form';
 import { useQuery } from 'react-query';
+import { useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import auth from '../../firebase.init';
 import Loading from '../../Shared/Loading';
@@ -11,6 +12,7 @@ const OrderDetailFrom = ({ tool }) => {
     const email = user?.email
     const [quantity, setQuantity] = useState(0)
     const { register, formState: { errors }, reset, handleSubmit } = useForm();
+    const navigate = useNavigate()
 
     const updatePrice = tool.price * parseInt(quantity)
 
@@ -54,6 +56,7 @@ const OrderDetailFrom = ({ tool }) => {
                 toast.success('Your order added successFully')
                 reset()
                 setQuantity(0)
+                navigate('/dashboard/myOrder')
             })
     }
 

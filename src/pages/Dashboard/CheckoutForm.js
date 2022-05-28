@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { CardElement, useStripe, useElements } from '@stripe/react-stripe-js'
+import { useNavigate } from 'react-router-dom';
 
 const CheckOutForm = ({ order }) => {
     const stripe = useStripe()
@@ -8,6 +9,7 @@ const CheckOutForm = ({ order }) => {
     const [success, setSuccess] = useState('')
     const [transactionId, setTransactionId] = useState('')
     const [clientSecret, setClientSecret] = useState("");
+    const navigate = useNavigate()
 
     const { _id, price, name, email, } = order
 
@@ -83,6 +85,7 @@ const CheckOutForm = ({ order }) => {
                 .then(res => res.json())
                 .then(data => {
                     console.log(data);
+                    navigate('/dashboard/myOrder')
                 })
         }
 
