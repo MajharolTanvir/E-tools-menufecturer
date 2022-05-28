@@ -67,7 +67,7 @@ const OrderDetailFrom = ({ tool }) => {
                         <label className="label">
                             <span className="label-text text-white">Name</span>
                         </label>
-                        <input readOnly value={user.displayName || person.name} className='border-2 border-slate-500 px-1 py-2 rounded-lg' {...register("Name", {
+                        <input readOnly value={user.displayName || person?.name} className='border-2 border-slate-500 px-1 py-2 rounded-lg' {...register("Name", {
                             required: true
                         })} />
                     </div>
@@ -76,7 +76,7 @@ const OrderDetailFrom = ({ tool }) => {
                         <label className="label">
                             <span className="label-text text-white">Email</span>
                         </label>
-                        <input readOnly value={user.email || person.email} className='border-2 border-slate-500 px-1 py-2 rounded-lg' {...register("Email", {
+                        <input readOnly value={user.email || person?.email} className='border-2 border-slate-500 px-1 py-2 rounded-lg' {...register("Email", {
                             required: true
                         })} />
                     </div>
