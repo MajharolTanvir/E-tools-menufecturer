@@ -83,8 +83,7 @@ const CheckOutForm = ({ order }) => {
                 body: JSON.stringify(storePayment)
             })
                 .then(res => res.json())
-                .then(data => {
-                    console.log(data);
+                .then(data => { 
                     navigate('/dashboard/myOrder')
                 })
         }

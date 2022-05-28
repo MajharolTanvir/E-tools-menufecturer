@@ -18,8 +18,8 @@ const AddReview = () => {
     }, [user?.email])
 
     const onSubmit = data => {
-        const name = user.displayName || person.name;
-        const image = user.image || person.img;
+        const name = user?.displayName || person.name;
+        const image = user?.photoURL || person.img;
         const country = person.country;
         console.log(data);
         const review = {

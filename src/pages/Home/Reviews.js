@@ -8,6 +8,7 @@ const Reviews = () => {
     if (isLoading) {
         return <Loading />
     }
+    console.log(reviews);
 
     return (
         <div className="container mx-auto">
@@ -23,7 +24,7 @@ const Reviews = () => {
                                 <div key={review._id} className="card w-full bg-base-100 pt-8 shadow-xl my-6">
                                     <div className="avatar mx-auto">
                                         <div className="w-24 mask mask-squircle">
-                                            <img src={review.image} alt='' />
+                                            <img src={review?.image} alt='' />
                                         </div>
                                     </div>
                                     <div className="card-body items-center text-center">
