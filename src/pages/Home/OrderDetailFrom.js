@@ -8,7 +8,7 @@ import Loading from '../../Shared/Loading';
 
 const OrderDetailFrom = ({ tool }) => {
     const [user] = useAuthState(auth)
-    const { email } = user;
+    const email = user?.email
     const [quantity, setQuantity] = useState(0)
     const { register, formState: { errors }, reset, handleSubmit } = useForm();
 
