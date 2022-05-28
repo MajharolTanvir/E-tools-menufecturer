@@ -40,7 +40,7 @@ We are a manufacturer. We are looking for a front-end web developer to build a w
 
 <!-- 13. An Admin should be able to make another user an admin. If an admin wants, he/she will be able to add a product on the add a product page. After adding the product, this product will appear on the `home` page. Please note, to add an image for a new product, you can just upload the image directly to the image hosting sites like imgbb, etc using API. Alternatively, you can have an input field to add the link to the image. -->
 
-<!-- 14. One route will be `Blogs`. This will be a open route. Anyone visiting your website will see it. You will need to answer at least five questions on the blogs page. This won't be a protected route. We recommend answering all six questions.
+14. One route will be `Blogs`. This will be a open route. Anyone visiting your website will see it. You will need to answer at least five questions on the blogs page. This won't be a protected route. We recommend answering all six questions.
 
     14.1 How will you improve the performance of a React Application?
 
@@ -52,7 +52,7 @@ We are a manufacturer. We are looking for a front-end web developer to build a w
     
     14.5 You have an array of products. Each object has a name, price, description, etc. How will you implement a search to find products by name?  
 
-    14.6 What is a unit test? Why should write unit tests? -->
+    14.6 What is a unit test? Why should write unit tests?
 
 <!-- 15. Create `My Portfolio` route. In this route, you will have your name, email address, educational background, list of technologies or skills you have as a web developer. Add links of three of your projects (live website links). Adding descriptions or screenshots of your projects are optional. -->
 

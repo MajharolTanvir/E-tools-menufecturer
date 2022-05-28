@@ -16,7 +16,7 @@ const MyPortfolio = () => {
                 </div>
                 <div>
                     <h6 className='font-bold text-center my-5'>Education:</h6>
-                    <div className="overflow-x-auto text-black">
+                    <div className="overflow-x-auto text-black shadow-lg shadow-yellow-500 rounded--lg">
                         <table className="table w-full">
                             <thead>
                                 <tr>
@@ -57,7 +57,7 @@ const MyPortfolio = () => {
                 </div>
                 <div>
                     <h6 className='text-center font-bold my-5'>Technology</h6>
-                    <div className='grid grid-cols-1 md:grid-cols-2 border-2 rounded-2xl border-slate-300'>
+                    <div className='grid grid-cols-1 md:grid-cols-2 shadow-lg shadow-yellow-500 border-2 rounded-2xl border-slate-300'>
                         <ul className='text-center'>
                             <li>HTML</li>
                             <li>CSS</li>

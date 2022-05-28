@@ -3,7 +3,7 @@ import banner1 from '../../image/banner.jpg'
 
 const Banner = () => {
     return (
-        <div>
+        <div className='mx-auto'>
             <img src={banner1} alt="" />
         </div>
     );
