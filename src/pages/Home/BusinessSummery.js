@@ -5,13 +5,13 @@ import { VscFeedback } from "react-icons/vsc";
 
 const BusinessSummery = () => {
   return (
-    <div className="mb-20" data-aos="flip-up">
+    <div className="mb-20">
       <div className="mb-20 my-20 text-center">
         <h3 className="text-3xl border-b-4 rounded-lg inline-block border-secondary font-semibold text-primary p-1">
           Business Summery
         </h3>
       </div>
-      <div className="container mx-auto">
+      <div className="container mx-auto" data-aos="flip-up">
         <div className="grid grid-cols-2 sm:grid-cols-4 gap-y-20 sm;gap-y-0 justify-between items-center mb-10">
           <div className="text-center">
             <MdOutlinedFlag className="mx-auto text-secondary text-4xl mb-3" />
