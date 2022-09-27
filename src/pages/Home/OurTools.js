@@ -18,7 +18,7 @@ const OurTools = () => {
   return (
     <div>
       <div className="my-20 text-center">
-        <h3 className="text-3xl font-semibold border-b-4 rounded-lg inline-block border-accent text-slate-100 p-1">
+        <h3 className="text-3xl font-semibold border-b-4 rounded-lg inline-block border-secondary text-primary p-1">
           Our Exclusive products
         </h3>
       </div>
@@ -26,17 +26,13 @@ const OurTools = () => {
         {tools.map((tool) => (
           <div
             key={tool._id}
-            className="card w-full sm:w-96 bg-gradient-to-r from-cyan-400 to-blue-400 text-black  shadow-xl shadow-secondary"
+            className="card w-full sm:w-96 bg-secondary shadow-xl shadow-secondary"
           >
             <figure className="px-10 pt-10">
               <img src={tool.image} alt="Shoes" className="rounded-xl" />
             </figure>
-            <div className="card-body items-start text-Justify">
+            <div className="card-body items-start text-accent text-Justify">
               <h2 className="card-title">Name: {tool.name}</h2>
-              <p>
-                <span className="text-md font-bold">Description:</span>{" "}
-                {tool.about.slice(0, 200)}
-              </p>
               <p>
                 <span className="text-md font-bold">Available quantity:</span>{" "}
                 {tool.available}
@@ -51,7 +47,7 @@ const OurTools = () => {
               </p>
               <div className="card-actions w-full">
                 <button
-                  className="btn hover:border-0 hover:shadow-xl bg-slate-800 hover:bg-gradient-to-r from-indigo-900 via-indigo-400 to-indigo-900 text-slate-100 hover:text-slate-900 my-3 w-full hover:font-bold"
+                  className="btn hover:border-0 hover:shadow-xl bg-primary hover:bg-accent text-accent hover:text-primary my-3 w-full hover:font-bold"
                   onClick={() => navigateOrderRoute(tool._id)}
                 >
                   Order Now
