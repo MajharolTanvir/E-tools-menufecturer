@@ -5,20 +5,19 @@ const OurMission = () => {
   return (
     <div
       className="text-white container mx-auto my-20"
-      data-aos="fade-right"
-      data-aos-offset="300"
-      data-aos-easing="ease-in-sine"
+      data-aos="fade-down"
+      data-aos-duration="3000"
     >
       <div className="my-20 text-center">
         <h3 className="text-3xl font-semibold border-b-4 rounded-lg inline-block border-secondary text-primary p-1">
           Our Mission
         </h3>
       </div>
-      <div className="hero min-h-screen">
+      <div className="hero">
         <div className="hero-content flex-col lg:flex-row">
           <img
             src={deal}
-            className="w-full sm:w-96 rounded-lg shadow-2xl"
+            className="w-full h-96 sm:w-96 rounded-lg shadow-2xl"
             alt=""
           />
           <div className="text-secondary">

@@ -15,8 +15,8 @@ const Reviews = () => {
   return (
     <div
       className="container mx-auto"
-      data-aos="fade-up"
-      data-aos-anchor-placement="top-center"
+      data-aos="fade-down"
+      data-aos-duration="3000"
     >
       <div className="mb-20">
         <div className="mb-1 mt-20 text-center">
@@ -28,7 +28,7 @@ const Reviews = () => {
           <h3 className="text-3xl text-center text-primary my-1 font-medium">
             Our happy Clients Feedbacks in their....
           </h3>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-4 gap-y-4 lg:gap-y-0">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 lg:gap-y-0 mx-5 lg:mx-0">
             {reviews
               ?.slice(reviews?.length - 3, reviews?.length)
               .map((review) => (
