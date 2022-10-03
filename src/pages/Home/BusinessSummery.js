@@ -5,7 +5,7 @@ import { VscFeedback } from "react-icons/vsc";
 
 const BusinessSummery = () => {
   return (
-    <div className="mb-20" data-aos="fade-down" data-aos-duration="3000">
+    <div className="mb-20">
       <div className="mb-20 my-20 text-center">
         <h3 className="text-3xl border-b-4 rounded-lg inline-block border-secondary font-semibold text-primary p-1">
           Business Summery

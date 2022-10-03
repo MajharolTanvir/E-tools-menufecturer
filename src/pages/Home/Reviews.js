@@ -15,8 +15,6 @@ const Reviews = () => {
   return (
     <div
       className="container mx-auto"
-      data-aos="fade-down"
-      data-aos-duration="3000"
     >
       <div className="mb-20">
         <div className="mb-1 mt-20 text-center">

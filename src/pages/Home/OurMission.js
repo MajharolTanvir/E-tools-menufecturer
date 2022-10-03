@@ -5,8 +5,6 @@ const OurMission = () => {
   return (
     <div
       className="text-white container mx-auto my-20"
-      data-aos="fade-down"
-      data-aos-duration="3000"
     >
       <div className="my-20 text-center">
         <h3 className="text-3xl font-semibold border-b-4 rounded-lg inline-block border-secondary text-primary p-1">
