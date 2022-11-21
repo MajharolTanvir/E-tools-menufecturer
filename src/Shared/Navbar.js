@@ -132,11 +132,15 @@ const Navbar = () => {
             </label>
             <ul
               tabIndex="0"
-              className="mt-3 p-2 shadow menu menu-compact dropdown-content bg-accent text-primary rounded-box w-52"
+              className="mt-3 p-2 shadow menu menu-compact dropdown-content bg-secondary text-accent rounded-box w-52"
             >
               <li>
-                <p>{user?.displayName || name}</p>
-                <p>{user?.email || email}</p>
+                <p>{user ? user?.displayName || name : "Name"}</p>
+              </li>
+              <li>
+                <p>{user ? user?.email || email : "Email"}</p>
+              </li>
+              <li>
                 <Link to="/dashboard" className="justify-between">
                   Profile
                   <span className="badge">New</span>
