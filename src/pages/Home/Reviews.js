@@ -13,17 +13,15 @@ const Reviews = () => {
   }
 
   return (
-    <div
-      className="container mx-auto"
-    >
+    <div className="container mx-auto">
       <div className="mb-20">
         <div className="mb-1 mt-20 text-center">
-          <h3 className="text-3xl mb-12 border-b-4 rounded-lg inline-block border-secondary font-semibold text-primary">
+          <h3 className="text-2xl md:text-3xl mb-12 border-b-4 rounded-lg inline-block border-secondary font-semibold text-primary">
             Clients Reviews
           </h3>
         </div>
         <div>
-          <h3 className="text-3xl text-center text-primary my-1 font-medium">
+          <h3 className="text-xl md:text-3xl text-center text-primary my-1 font-medium">
             Our happy Clients Feedbacks in their....
           </h3>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 lg:gap-y-0 mx-5 lg:mx-0">

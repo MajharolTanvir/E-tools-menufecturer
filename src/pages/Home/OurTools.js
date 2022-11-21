@@ -16,16 +16,13 @@ const OurTools = () => {
     navigate(`/tool/${id}`);
   };
   return (
-    <div className="mx-5 lg:mx-0">
+    <div className="container px-3 lg:px-0 lg:mx-auto">
       <div className="my-20 text-center">
-        <h3 className="text-3xl font-semibold border-b-4 rounded-lg inline-block border-secondary text-primary p-1">
+        <h3 className="text-2xl md:text-3xl font-semibold border-b-4 rounded-lg inline-block border-secondary text-primary p-1">
           Our Exclusive products
         </h3>
       </div>
-      <div
-      
-        className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 justify-items-center mb-40"
-      >
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 justify-items-center mb-40">
         {tools.map((tool) => (
           <div
             key={tool._id}

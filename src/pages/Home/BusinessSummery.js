@@ -7,7 +7,7 @@ const BusinessSummery = () => {
   return (
     <div className="mb-20">
       <div className="mb-20 my-20 text-center">
-        <h3 className="text-3xl border-b-4 rounded-lg inline-block border-secondary font-semibold text-primary p-1">
+        <h3 className="text-2xl md:text-3xl border-b-4 rounded-lg inline-block border-secondary font-semibold text-primary p-1">
           Business Summery
         </h3>
       </div>

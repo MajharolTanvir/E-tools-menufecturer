@@ -7,7 +7,7 @@ const OurMission = () => {
       className="text-white container mx-auto my-20"
     >
       <div className="my-20 text-center">
-        <h3 className="text-3xl font-semibold border-b-4 rounded-lg inline-block border-secondary text-primary p-1">
+        <h3 className="text-2xl md:text-3xl font-semibold border-b-4 rounded-lg inline-block border-secondary text-primary p-1">
           Our Mission
         </h3>
       </div>
@@ -19,7 +19,7 @@ const OurMission = () => {
             alt=""
           />
           <div className="text-secondary">
-            <h1 className="text-3xl md:text-5xl font-bold">
+            <h1 className="text-2xl md:text-5xl font-bold">
               Our company mission and vision
             </h1>
             <ul className="my-5 pl-10">
