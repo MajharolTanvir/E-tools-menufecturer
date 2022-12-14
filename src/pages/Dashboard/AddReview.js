@@ -15,7 +15,7 @@ const AddReview = () => {
   } = useForm();
 
   useEffect(() => {
-    fetch(`http://localhost:5000/user/${user?.email}`)
+    fetch(`https://e-tools-manufecturer-server.vercel.app/user/${user?.email}`)
       .then((res) => res.json())
       .then((data) => {
         setPerson(data);
@@ -34,7 +34,7 @@ const AddReview = () => {
       rating: parseInt(data.Rating),
       Comment: data.Comment,
     };
-    fetch("http://localhost:5000/rating", {
+    fetch("https://e-tools-manufecturer-server.vercel.app/rating", {
       method: "POST",
       headers: {
         "content-type": "application/json",

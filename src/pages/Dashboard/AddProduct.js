@@ -32,7 +32,7 @@ const AddProduct = () => {
             minQuantity: parseInt(data.minQuantity),
             price: parseInt(data.Price),
           };
-          fetch("http://localhost:5000/addTool", {
+          fetch("https://e-tools-manufecturer-server.vercel.app/addTool", {
             method: "POST",
             headers: {
               "content-type": "application/json",

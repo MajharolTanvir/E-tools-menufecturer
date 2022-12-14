@@ -47,7 +47,7 @@ const Registration = () => {
             img: result.data.display_url,
             email: email,
           };
-          fetch("http://localhost:5000/user", {
+          fetch("https://e-tools-manufecturer-server.vercel.app/user", {
             method: "POST",
             headers: {
               "content-type": "application/json",

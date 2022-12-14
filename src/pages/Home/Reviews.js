@@ -4,7 +4,9 @@ import Loading from "../../Shared/Loading";
 
 const Reviews = () => {
   const { data: reviews, isLoading } = useQuery("review", () =>
-    fetch("http://localhost:5000/ratings").then((res) => res.json())
+    fetch("https://e-tools-manufecturer-server.vercel.app/ratings").then(
+      (res) => res.json()
+    )
   );
   if (isLoading) {
     return <Loading />;

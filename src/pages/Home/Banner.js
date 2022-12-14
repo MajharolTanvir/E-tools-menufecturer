@@ -5,7 +5,7 @@ const Banner = () => {
   const [tools, setTools] = useState([]);
 
   useEffect(() => {
-    fetch("http://localhost:5000/tools")
+    fetch("https://e-tools-manufecturer-server.vercel.app/tools")
       .then((res) => res.json())
       .then((data) => setTools(data));
   }, []);

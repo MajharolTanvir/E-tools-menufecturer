@@ -14,7 +14,9 @@ const Navbar = () => {
 
   useEffect(() => {
     if (user?.email) {
-      fetch(`http://localhost:5000/user/${user?.email}`)
+      fetch(
+        `https://e-tools-manufecturer-server.vercel.app/user/${user?.email}`
+      )
         .then((res) => res.json())
         .then((data) => {
           setPerson(data);
@@ -54,7 +56,7 @@ const Navbar = () => {
             </label>
             <ul
               tabIndex="0"
-              className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-accent text-primary  rounded-box w-52"
+              className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-accent text-primary rounded-box w-52"
             >
               <li>
                 <Link to="/">Home</Link>
@@ -85,7 +87,11 @@ const Navbar = () => {
             to="/"
             className="btn btn-ghost normal-case text-md sm:text-xl "
           >
-            <img className="w-8 sm:w-12 px-1 font-bold" src={logo} alt="" />
+            <img
+              className="w-8 sm:w-12 px-1 font-bold text-primary"
+              src={logo}
+              alt=""
+            />
             E-tools manufacturer
           </Link>
         </div>

@@ -9,7 +9,9 @@ const ManageAllProducts = () => {
     isLoading,
     refetch,
   } = useQuery("tools", () =>
-    fetch("http://localhost:5000/tools").then((res) => res.json())
+    fetch("https://e-tools-manufecturer-server.vercel.app/tools").then((res) =>
+      res.json()
+    )
   );
 
   if (isLoading) {
@@ -17,7 +19,7 @@ const ManageAllProducts = () => {
   }
 
   const handleDelete = (id) => {
-    fetch(`http://localhost:5000/deleteTool/${id}`, {
+    fetch(`https://e-tools-manufecturer-server.vercel.app/deleteTool/${id}`, {
       method: "DELETE",
       headers: {
         authorization: `Bearer ${localStorage.getItem("accessToken")}`,

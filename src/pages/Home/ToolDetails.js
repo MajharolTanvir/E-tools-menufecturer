@@ -9,7 +9,7 @@ const ToolDetails = () => {
   const { name, image, about, available, minQuantity, price } = tool;
 
   useEffect(() => {
-    fetch(`http://localhost:5000/tool/${id}`)
+    fetch(`https://e-tools-manufecturer-server.vercel.app/tool/${id}`)
       .then((res) => res.json())
       .then((data) => setTool(data));
   }, [id]);

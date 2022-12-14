@@ -15,7 +15,7 @@ const MyOrders = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    fetch(`http://localhost:5000/order/${email}`, {
+    fetch(`https://e-tools-manufecturer-server.vercel.app/order/${email}`, {
       method: "GET",
       headers: {
         authorization: `Bearer ${localStorage.getItem("accessToken")}`,
