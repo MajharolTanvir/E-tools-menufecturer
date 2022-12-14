@@ -15,7 +15,7 @@ const AddReview = () => {
   } = useForm();
 
   useEffect(() => {
-    fetch(`https://e-tools-manufacturer.herokuapp.com/user/${user?.email}`)
+    fetch(`http://localhost:5000/user/${user?.email}`)
       .then((res) => res.json())
       .then((data) => {
         setPerson(data);
@@ -34,7 +34,7 @@ const AddReview = () => {
       rating: parseInt(data.Rating),
       Comment: data.Comment,
     };
-    fetch("https://e-tools-manufacturer.herokuapp.com/rating", {
+    fetch("http://localhost:5000/rating", {
       method: "POST",
       headers: {
         "content-type": "application/json",

@@ -32,7 +32,7 @@ const AddProduct = () => {
             minQuantity: parseInt(data.minQuantity),
             price: parseInt(data.Price),
           };
-          fetch("https://e-tools-manufacturer.herokuapp.com/addTool", {
+          fetch("http://localhost:5000/addTool", {
             method: "POST",
             headers: {
               "content-type": "application/json",

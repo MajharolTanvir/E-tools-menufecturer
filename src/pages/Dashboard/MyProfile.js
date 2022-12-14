@@ -16,9 +16,7 @@ const MyProfile = () => {
     isLoading,
     refetch,
   } = useQuery(["person", email], () =>
-    fetch(`https://e-tools-manufacturer.herokuapp.com/user/${email}`).then(
-      (res) => res.json()
-    )
+    fetch(`http://localhost:5000/user/${email}`).then((res) => res.json())
   );
 
   const imageStorageKey = "e13c0deb95648d59c098b58894a2f7c7";
@@ -45,7 +43,7 @@ const MyProfile = () => {
             number: data.Number,
             country: data.Country,
           };
-          fetch(`https://e-tools-manufacturer.herokuapp.com/user/${email}`, {
+          fetch(`http://localhost:5000/user/${email}`, {
             method: "PUT",
             headers: {
               "content-type": "application/json",

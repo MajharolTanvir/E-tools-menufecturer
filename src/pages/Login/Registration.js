@@ -47,7 +47,7 @@ const Registration = () => {
             img: result.data.display_url,
             email: email,
           };
-          fetch("https://e-tools-manufacturer.herokuapp.com/user", {
+          fetch("http://localhost:5000/user", {
             method: "POST",
             headers: {
               "content-type": "application/json",

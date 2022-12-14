@@ -5,7 +5,7 @@ const Banner = () => {
   const [tools, setTools] = useState([]);
 
   useEffect(() => {
-    fetch("https://e-tools-manufacturer.herokuapp.com/tools")
+    fetch("http://localhost:5000/tools")
       .then((res) => res.json())
       .then((data) => setTools(data));
   }, []);

@@ -22,9 +22,7 @@ const OrderDetailFrom = ({ tool }) => {
   const updatePrice = tool.price * parseInt(quantity);
 
   const { data: person, isLoading } = useQuery(["person", email], () =>
-    fetch(`https://e-tools-manufacturer.herokuapp.com/user/${email}`).then(
-      (res) => res.json()
-    )
+    fetch(`http://localhost:5000/user/${email}`).then((res) => res.json())
   );
 
   if (isLoading) {
@@ -53,7 +51,7 @@ const OrderDetailFrom = ({ tool }) => {
       productName: tool.name,
       price: updatePrice,
     };
-    fetch("https://e-tools-manufacturer.herokuapp.com/orders", {
+    fetch("http://localhost:5000/orders", {
       method: "POST",
       headers: {
         "content-type": "application/json",

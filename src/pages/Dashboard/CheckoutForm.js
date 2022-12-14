@@ -15,16 +15,13 @@ const CheckOutForm = ({ order }) => {
 
   useEffect(() => {
     if (price) {
-      fetch(
-        "https://e-tools-manufacturer.herokuapp.com/create-payment-intent",
-        {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify({ price }),
-        }
-      )
+      fetch("http://localhost:5000/create-payment-intent", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ price }),
+      })
         .then((res) => res.json())
         .then((data) => {
           if (data?.clientSecret) {
@@ -75,7 +72,7 @@ const CheckOutForm = ({ order }) => {
         transactionId: paymentIntent.id,
       };
 
-      fetch(`https://e-tools-manufacturer.herokuapp.com/order/${_id}`, {
+      fetch(`http://localhost:5000/order/${_id}`, {
         method: "PATCH",
         headers: {
           "content-type": "application/json",

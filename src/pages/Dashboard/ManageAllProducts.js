@@ -9,9 +9,7 @@ const ManageAllProducts = () => {
     isLoading,
     refetch,
   } = useQuery("tools", () =>
-    fetch("https://e-tools-manufacturer.herokuapp.com/tools").then((res) =>
-      res.json()
-    )
+    fetch("http://localhost:5000/tools").then((res) => res.json())
   );
 
   if (isLoading) {
@@ -19,7 +17,7 @@ const ManageAllProducts = () => {
   }
 
   const handleDelete = (id) => {
-    fetch(`https://e-tools-manufacturer.herokuapp.com/deleteTool/${id}`, {
+    fetch(`http://localhost:5000/deleteTool/${id}`, {
       method: "DELETE",
       headers: {
         authorization: `Bearer ${localStorage.getItem("accessToken")}`,
